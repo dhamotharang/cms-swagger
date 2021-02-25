@@ -1,0 +1,3861 @@
+openapi: 3.0.1
+info:
+  title: Leave REST API
+  description: This is API for leave service
+  version: "1.0"
+servers:
+- url: /
+tags:
+- name: leave
+  description: ""
+paths:
+  /:
+    get:
+      responses:
+        200:
+          description: ""
+          content: {}
+  /api/auth/login:
+    post:
+      summary: Login and verify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: LoginDto
+  /api/auth/login/ad:
+    post:
+      summary: Login ad
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: LoginDto
+  /api/auth/login/email:
+    post:
+      summary: Login email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: LoginDto
+  /api/forgot-password/{email}:
+    post:
+      summary: Send email forgot password
+      parameters:
+      - name: email
+        in: path
+        description: Email user
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+  /api/change-password/execute:
+    post:
+      summary: Change password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteChangePasswordDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ExecuteChangePasswordDto
+  /api/azure/upload:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  description: The file to upload
+                  format: binary
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+  /api/invitation/{token}:
+    get:
+      summary: Accept Invitation sent by admin
+      parameters:
+      - name: token
+        in: path
+        description: token used to validate user invitation identity
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ""
+          content: {}
+  /api/invitation:
+    post:
+      summary: Sent invitation to user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Array'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: Array
+    patch:
+      summary: Update user password for first time
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivatedByPassword'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      x-codegen-request-body-name: ActivatedByPassword
+  /api/userimport:
+    post:
+      summary: Import user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Array'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: Array
+  /api/userimport/csv:
+    post:
+      summary: Import user from CSV list
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  description: The file to upload
+                  format: binary
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/leavetype:
+    get:
+      summary: Find all Leavetype
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Create leavetype
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLeaveTypeDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateLeaveTypeDTO
+    patch:
+      summary: Update Leavetype
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLeaveTypeDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateLeaveTypeDTO
+  /api/admin/leavetype/{id}:
+    get:
+      summary: Find one Leavetype
+      parameters:
+      - name: id
+        in: path
+        description: Filter by leavetype guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    delete:
+      summary: Delete leavetype
+      parameters:
+      - name: id
+        in: path
+        description: Delete by leavetype guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leavetype-entitlement:
+    get:
+      summary: Get list of leave entitlement for this tenant
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Create leavetype entitlement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLeaveEntitlementTypeDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateLeaveEntitlementTypeDTO
+    patch:
+      summary: Update Leavetype entitlement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLeaveTypeEntitlementDto'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateLeaveTypeEntitlementDto
+  /api/leavetype-entitlement/{id}:
+    get:
+      summary: Get leave entitlement for this tenant
+      parameters:
+      - name: id
+        in: path
+        description: filter leave by ENTITLEMENT GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    delete:
+      summary: Delete leavetype entitlement
+      parameters:
+      - name: id
+        in: path
+        description: Delete by leavetype entitlement guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/company:
+    get:
+      summary: Get company list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    patch:
+      summary: Update company
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCompanyDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateCompanyDTO
+  /api/company/year-end:
+    get:
+      summary: Get company list with year end verification
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/company/{id}:
+    get:
+      summary: Get one company
+      parameters:
+      - name: id
+        in: path
+        description: Get by company guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    delete:
+      summary: Delete company
+      parameters:
+      - name: id
+        in: path
+        description: Delete by company guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/company/{name}:
+    post:
+      summary: Create company
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/holiday/calendar:
+    get:
+      summary: Get holiday list from calendarific
+      parameters:
+      - name: month
+        in: query
+        description: 1, 2, ...
+        schema: {}
+      - name: location
+        in: query
+        description: my-10, my-09, ...
+        schema: {}
+      - name: year
+        in: query
+        description: 2019, 2020, ...
+        schema: {}
+      - name: country
+        in: query
+        description: 'ref : https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes'
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/holiday/calendar-profile:
+    get:
+      summary: Get calendar profile list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Setup calendar profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCalendarDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateCalendarDTO
+    patch:
+      summary: Edit calendar profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCalendarDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateCalendarDTO
+  /api/admin/holiday/calendar-profile/{id}:
+    delete:
+      summary: Delete calendar profile
+      parameters:
+      - name: id
+        in: path
+        description: Delete by CALENDAR_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/holiday/calendar-profile/days/{id}/{year}:
+    get:
+      summary: Get holiday list by calendar profile
+      parameters:
+      - name: year
+        in: path
+        description: YEAR
+        required: true
+        schema: {}
+      - name: id
+        in: path
+        description: CALENDAR_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/holiday/calendar-profile/users/{id}:
+    get:
+      summary: Get employee list by calendar profile
+      parameters:
+      - name: id
+        in: path
+        description: Filter by CALENDAR_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/holiday/calendar-profile/user-calendar:
+    patch:
+      summary: Assign calendar profile to employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserCalendarDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateUserCalendarDTO
+  /api/admin/role/role-profile:
+    get:
+      summary: Get role profile list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Setup new role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: RoleDTO
+    patch:
+      summary: Edit role profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateRoleDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateRoleDTO
+  /api/admin/role/role-profile/{id}:
+    delete:
+      summary: Delete role profile
+      parameters:
+      - name: id
+        in: path
+        description: Delete by ROLE_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/role/role-profile/users/{id}:
+    get:
+      summary: Get employee list by role profile
+      parameters:
+      - name: id
+        in: path
+        description: Filter by ROLE_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/role/{id}:
+    get:
+      summary: Get role detail by role profile guid
+      parameters:
+      - name: id
+        in: path
+        description: Filter by ROLE_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/role/user-role:
+    patch:
+      summary: Assign role profile to employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRoleDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateUserRoleDTO
+  /api/admin/working-hours/working-hours-profile:
+    get:
+      summary: Get working hours profile list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Setup new working hours
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkingHoursDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: WorkingHoursDTO
+    patch:
+      summary: Edit working hours profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWorkingHoursDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateWorkingHoursDTO
+  /api/admin/working-hours/working-hours-profile/{id}:
+    delete:
+      summary: Delete working hours profile
+      parameters:
+      - name: id
+        in: path
+        description: Delete by WORKING_HOURS_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/working-hours/working-hours-profile/users/{id}:
+    get:
+      summary: Get employee list by working hours profile
+      parameters:
+      - name: id
+        in: path
+        description: Filter by WORKING_HOURS_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/working-hours/{id}:
+    get:
+      summary: Get working hours detail by working hours profile guid
+      parameters:
+      - name: id
+        in: path
+        description: Filter by WORKING_HOURS_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/working-hours/user-working-hours:
+    patch:
+      summary: Assign working hours profile to employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserWorkingHoursDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateUserWorkingHoursDTO
+  /api/admin/master/{item}:
+    get:
+      summary: Get data list
+      parameters:
+      - name: item
+        in: path
+        description: Get list of master item
+        required: true
+        schema:
+          type: string
+          enum:
+          - department
+          - designation
+          - section
+          - branch
+          - bank
+          - costcentre
+          - country
+          - employee_type
+          - employee_status
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    patch:
+      summary: Update data list
+      parameters:
+      - name: item
+        in: path
+        description: Update list of master item
+        required: true
+        schema:
+          type: string
+          enum:
+          - department
+          - designation
+          - section
+          - branch
+          - bank
+          - costcentre
+          - country
+          - employee_type
+          - employee_status
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MasterSetupDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: MasterSetupDTO
+  /api/admin/general-leave-policy:
+    get:
+      summary: Get general leave policy
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Create general leave policy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGeneralLeavePolicyDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateGeneralLeavePolicyDTO
+    patch:
+      summary: Update general leave policy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGeneralLeavePolicyDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateGeneralLeavePolicyDTO
+  /api/admin/general-leave-policy/{id}:
+    get:
+      summary: Get general leave policy by company id
+      parameters:
+      - name: id
+        in: path
+        description: Filter by TENANT_COMPANY_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/general-leave-policy/resync/{companyPolicyId}:
+    patch:
+      summary: Resync general policy setting
+      parameters:
+      - name: companyPolicyId
+        in: path
+        description: Company policy guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leave/apply:
+    post:
+      summary: Apply leave
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyLeaveDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ApplyLeaveDTO
+  /api/leave/apply-on-behalf:
+    post:
+      summary: Apply leave on behalf by bundle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyLeaveBundleDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ApplyLeaveBundleDTO
+  /api/leave/policy:
+    post:
+      summary: Approved Leave
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leave/manager-list/{id}:
+    get:
+      summary: Get manager list
+      parameters:
+      - name: id
+        in: path
+        description: User guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leave/{status}:
+    post:
+      summary: Approved Leave
+      parameters:
+      - name: status
+        in: path
+        description: Process status
+        required: true
+        schema:
+          type: string
+          enum:
+          - approved
+          - rejected
+          - cancelled
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApprovedLeaveDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ApprovedLeaveDTO
+  /api/admin/approval-override:
+    get:
+      summary: Get pending leave
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    patch:
+      summary: Update approval status
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateApprovalDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateApprovalDTO
+  /api/admin/approval-override/company/{id}:
+    get:
+      summary: Get pending leave
+      parameters:
+      - name: id
+        in: path
+        description: Company guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/approval-override/{id}:
+    get:
+      summary: Get own leave history
+      parameters:
+      - name: id
+        in: path
+        description: User guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/leave-adjustment:
+    patch:
+      summary: Update Leave Adjustment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeaveAdjustmentDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: LeaveAdjustmentDTO
+  /api/admin/year-end-closing/{year}:
+    post:
+      summary: Assign leave entitlement for next year
+      parameters:
+      - name: year
+        in: path
+        description: Closing year
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/year-end-closing/{year}/{companyid}:
+    post:
+      summary: Assign leave entitlement for next year
+      parameters:
+      - name: companyid
+        in: path
+        description: Company guid
+        required: true
+        schema: {}
+      - name: year
+        in: path
+        description: Closing year
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/announcement:
+    get:
+      summary: get announcement list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Create new announcement
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAnnouncementDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateAnnouncementDto
+    patch:
+      summary: Update announcement data
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAnnouncementDto'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateAnnouncementDto
+  /api/admin/announcement/{id}:
+    delete:
+      summary: Delete announcement data
+      parameters:
+      - name: id
+        in: path
+        description: Delete by ANNOUNCEMENT_GUID
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/userprofile/personal-detail:
+    get:
+      summary: Get personal detail to edit for this user
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/userprofile/employment-detail/{id}:
+    get:
+      summary: Get employment detail to edit for requested user
+      parameters:
+      - name: id
+        in: path
+        description: filter user by USER_INFO_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/userprofile/employment-detail:
+    patch:
+      summary: Update employment detail for this user profile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEmploymentDetailDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateEmploymentDetailDTO
+  /api/users/{role}:
+    get:
+      summary: Get list of employee
+      parameters:
+      - name: role
+        in: path
+        description: Whether admin or employee
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/users/{id}:
+    delete:
+      summary: Set resign date
+      parameters:
+      - name: id
+        in: path
+        description: Delete by user guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/users/disable:
+    post:
+      summary: Set disable user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisableUserDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: DisableUserDTO
+  /api/userprofile/{id}:
+    get:
+      summary: Get profile detail for requested user
+      parameters:
+      - name: id
+        in: path
+        description: filter user by USER_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/userprofile:
+    get:
+      summary: Get profile detail for requesting user
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leave-entitlement:
+    get:
+      summary: Get entitlement detail for this user
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    post:
+      summary: Assign leave entitlement to user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignLeavePolicyDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: AssignLeavePolicyDTO
+  /api/leave-entitlement/{id}:
+    get:
+      summary: Get entitlement detail to edit for requested user
+      parameters:
+      - name: id
+        in: path
+        description: filter entitlement by USER_GUID
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+    delete:
+      summary: Delete user leave entitlement
+      parameters:
+      - name: id
+        in: path
+        description: Delete by user leave entitlement guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/leave-entitlement/replacement:
+    post:
+      summary: Assign replacement leave entitlement to user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReplacementLeaveDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateReplacementLeaveDTO
+  /api/leave-entitlement/entitlement-claim:
+    post:
+      summary: Assign entitlement claim to user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEntitlementClaimDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: CreateEntitlementClaimDTO
+  /api/admin/user-info-details/activate/{id}:
+    post:
+      summary: Reactivate user and create new user info
+      parameters:
+      - name: id
+        in: path
+        description: User guid
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReactivateUserDTO'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ReactivateUserDTO
+  /api/admin/user-info-details/recent-staff-id/{id}:
+    get:
+      summary: Get employee personal info
+      parameters:
+      - name: id
+        in: path
+        description: Tenant company guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/user-info-details/{item}:
+    get:
+      summary: Get employee personal info
+      parameters:
+      - name: item
+        in: path
+        description: Get user info by category
+        required: true
+        schema:
+          type: string
+          enum:
+          - notification-rule
+          - employment-detail
+          - personal-details
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/user-info-details/{item}/{id}:
+    get:
+      summary: Get employee personal info by user guid
+      parameters:
+      - name: id
+        in: path
+        description: Get user info by user info guid
+        required: true
+        schema: {}
+      - name: item
+        in: path
+        description: Get user info by category
+        required: true
+        schema:
+          type: string
+          enum:
+          - notification-rule
+          - employment-detail
+          - personal-details
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/user-info-details/all/{id}:
+    patch:
+      summary: Edit user info by user info guid
+      parameters:
+      - name: id
+        in: path
+        description: Edit by user info guid
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserInfoItemDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: UpdateUserInfoItemDTO
+  /api/admin/user-info-details/employment/{id}:
+    patch:
+      summary: Edit employment info by user info guid
+      parameters:
+      - name: id
+        in: path
+        description: Edit by user info guid
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmploymentDetailsDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: EmploymentDetailsDTO
+  /api/admin/user-info-details/personal/{id}:
+    patch:
+      summary: Edit personal info by user info guid
+      parameters:
+      - name: id
+        in: path
+        description: Edit by user info guid
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalDetailsDTO'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: PersonalDetailsDTO
+  /api/admin/user-info-details/notification-rule/{id}:
+    patch:
+      summary: Edit notification rule by user info guid
+      parameters:
+      - name: id
+        in: path
+        description: Edit by user info guid
+        required: true
+        schema: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Array'
+        required: true
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: Array
+  /api/employee/upcoming-holiday:
+    get:
+      summary: Get all list of upcoming holiday
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/date-of-birth:
+    get:
+      summary: Get date of birth
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/long-leave/{role}:
+    get:
+      summary: Get upcoming long leave (>= 5 days)
+      parameters:
+      - name: role
+        in: path
+        description: Role user
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/dashboard-my-task:
+    get:
+      summary: Get my task
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/dashboard-annual-leave:
+    get:
+      summary: Get dashboard annual leave
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/dashboard-medical-leave:
+    get:
+      summary: Get dashboard medical leave
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/dashboard-replacement-leave:
+    get:
+      summary: Get dashboard replacement leave
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/{leavecode}/{data}:
+    get:
+      summary: Get my leave
+      parameters:
+      - name: data
+        in: path
+        description: Show eLeave summary or detailed
+        required: true
+        schema:
+          type: string
+          enum:
+          - simple
+          - detailed
+      - name: leavecode
+        in: path
+        description: Annual Leave (AL), Birthday Leave (BL), Compassionate Leave (CL),
+          Hospitalization Leave (HL), Medical Leave (ML), Paternity Leave (PL), Replacement
+          Leave (RL), Maternity Leave (MTL), Marriage Leave (MRL)
+        required: true
+        schema:
+          type: string
+          enum:
+          - AL
+          - BL
+          - CL
+          - HL
+          - ML
+          - PL
+          - RL
+          - MTL
+          - MRL
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/status-onleave:
+    get:
+      summary: Get total employee status onleave
+      parameters:
+      - name: enddate
+        in: query
+        description: End date leave
+        required: true
+        schema: {}
+      - name: startdate
+        in: query
+        description: Start date leave
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/leave-list:
+    get:
+      summary: Get total employee on leave
+      parameters:
+      - name: enddate
+        in: query
+        description: End date leave
+        required: true
+        schema: {}
+      - name: startdate
+        in: query
+        description: Start date leave
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/employee/calendar-leave-list:
+    get:
+      summary: Get all list of employee to calendar
+      parameters:
+      - name: enddate
+        in: query
+        description: End date leave
+        schema: {}
+      - name: startdate
+        in: query
+        description: Start date leave
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/dashboard/{item}:
+    get:
+      summary: Get upcoming joiner or upcoming leaver or upcoming birthday for this
+        tenant
+      parameters:
+      - name: item
+        in: path
+        description: Select upcoming joiner or upcoming leaver
+        required: true
+        schema:
+          type: string
+          enum:
+          - upcoming-joiner
+          - upcoming-leaver
+          - upcoming-birthday
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/report/{reporttype}/{id}:
+    get:
+      summary: Get individual report
+      parameters:
+      - name: reporttype
+        in: path
+        description: Type of report
+        required: true
+        schema:
+          type: string
+          enum:
+          - leave-entitlement
+          - approval-override
+          - apply-on-behalf
+          - entitlement-claim
+          - leave-taken
+          - leave-adjustment
+          - leave-cancellation
+          - leave-rejected
+          - leave-forfeited
+          - employee-master-list
+      - name: id
+        in: path
+        description: Get by user guid
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/report/{reporttype}:
+    get:
+      summary: Get bundle report
+      parameters:
+      - name: reporttype
+        in: path
+        description: Type of report
+        required: true
+        schema:
+          type: string
+          enum:
+          - leave-entitlement
+          - approval-override
+          - apply-on-behalf
+          - entitlement-claim
+          - leave-taken
+          - leave-adjustment
+          - leave-cancellation
+          - leave-rejected
+          - leave-forfeited
+          - employee-master-list
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/entitlement-claim/leave-claimable:
+    get:
+      summary: Claimable leavetype
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/entitlement-claim/request:
+    post:
+      summary: Entitlement claim request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntitlementClaimRequestDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: EntitlementClaimRequestDto
+  /api/entitlement-claim:
+    get:
+      summary: Get entitlement claim
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/entitlement-claim/approve:
+    post:
+      summary: Approve entitlement claim
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntitlementClaimApproveDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: EntitlementClaimApproveDto
+  /api/profile-picture:
+    post:
+      summary: Upoad profile picture
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePictureDto'
+        required: true
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+      x-codegen-request-body-name: ProfilePictureDto
+  /api/profile-picture/{type}:
+    get:
+      summary: Get profile picture
+      parameters:
+      - name: type
+        in: path
+        description: all or personal
+        required: true
+        schema: {}
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/profile-default:
+    get:
+      summary: Find default profile
+      responses:
+        200:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/admin/profile-default/{profile}/{id}:
+    post:
+      summary: Update profile default
+      parameters:
+      - name: profile
+        in: path
+        description: Profile to set default
+        required: true
+        schema:
+          type: string
+          enum:
+          - calendar
+          - working-hour
+          - role
+          - attendance
+      - name: id
+        in: path
+        description: Profile guid
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+      security:
+      - bearer: []
+  /api/default-profile/{tenantId}:
+    post:
+      summary: Create default profile for this tenant
+      parameters:
+      - name: tenantId
+        in: path
+        description: Tenant guid
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+  /api/default-profile/{tenantId}/{userId}:
+    post:
+      summary: Assign default to first eleave user
+      parameters:
+      - name: userId
+        in: path
+        description: User guid
+        required: true
+        schema: {}
+      - name: tenantId
+        in: path
+        description: Tenant guid
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+  /api/default-profile/{tenantId}/{companyName}/{userId}:
+    post:
+      summary: Create company policy
+      parameters:
+      - name: userId
+        in: path
+        description: User id
+        required: true
+        schema: {}
+      - name: companyName
+        in: path
+        description: Company name
+        required: true
+        schema: {}
+      - name: tenantId
+        in: path
+        description: Tenant id
+        required: true
+        schema: {}
+      responses:
+        201:
+          description: ""
+          content: {}
+components:
+  schemas:
+    LoginDto:
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email id account
+          example: kenna.ratke35@ethereal.email
+        password:
+          type: string
+          description: Password for email account
+          example: MTIzNDU2
+    ExecuteChangePasswordDto:
+      required:
+      - loginId
+      - oldPassword
+      - password
+      type: object
+      properties:
+        loginId:
+          type: string
+          description: login id
+          example: usadnenwfklan
+        password:
+          type: string
+          description: encrypted password
+          example: MTExMQ==
+        oldPassword:
+          type: string
+          description: encrypted password
+          example: YWJjMTIz
+    ActivatedByPassword:
+      required:
+      - id
+      - password
+      type: object
+      properties:
+        password:
+          type: string
+          description: Employee password
+          example: P@s$w0rD
+        id:
+          type: string
+          description: Employee invitation guid
+          example: 4e84f750-81c8-11e9-a30e-05621369ef51
+    Array:
+      type: object
+    CreateLeaveTypeDTO:
+      required:
+      - abbr
+      - code
+      - description
+      type: object
+      properties:
+        abbr:
+          type: string
+          description: Leavetype abbreviation
+          example: AL
+        code:
+          type: string
+          description: Leavetype code
+          example: Hospitalization Leave
+        description:
+          type: string
+          description: Leavetype description
+          example: This is annual/medical leave
+    UpdateLeaveTypeDTO:
+      required:
+      - abbr
+      - code
+      - description
+      - id
+      type: object
+      properties:
+        abbr:
+          type: string
+          description: Leavetype abbreviation
+          example: AL
+        code:
+          type: string
+          description: Leavetype code
+          example: Hospitalization Leave
+        description:
+          type: string
+          description: Leavetype description
+          example: This is annual/medical leave
+        id:
+          type: string
+          description: Leavetype GUID
+          example: 8fae9580-f089-11e9-8b1d-3592f6ef2e3d
+    ExcludeDayTypeXmlDTO:
+      required:
+      - isExcludeHoliday
+      - isExcludeRestDay
+      type: object
+      properties:
+        isExcludeHoliday:
+          type: boolean
+          description: Exclude Holidays from calculation
+          example: true
+        isExcludeRestDay:
+          type: boolean
+          description: Exclude Rest Days from calculation
+          example: true
+    GeneralPropertiesXmlDTO:
+      required:
+      - isCheck
+      - textValue
+      type: object
+      properties:
+        isCheck:
+          type: boolean
+          description: Is check
+          example: false
+        textValue:
+          type: string
+          description: Text value
+          example: Some value
+    ApplyBeforePropertiesXmlDTO:
+      required:
+      - excludeDayType
+      - isAllowShortNotice
+      - markAsEmergency
+      - numberOfDays
+      type: object
+      properties:
+        numberOfDays:
+          type: number
+          description: Number of day for employee to apply leave in advance.
+          example: 5.0
+        excludeDayType:
+          title: ExcludeDayTypeXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ExcludeDayTypeXmlDTO'
+          - type: object
+            description: Excluded Day Type from leave calculation
+        isAllowShortNotice:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow applicant to apply leave less than number of day (s)
+              stated above
+        markAsEmergency:
+          type: boolean
+          description: Mark short notice application as Emergency
+          example: false
+    ApplyWithinPropertiesXmlDTO:
+      required:
+      - excludeDayType
+      - isAllowBackdated
+      - numberOfDays
+      type: object
+      properties:
+        numberOfDays:
+          type: number
+          description: Number of day required for backdated leave submission.
+          example: 3.0
+        excludeDayType:
+          title: ExcludeDayTypeXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ExcludeDayTypeXmlDTO'
+          - type: object
+            description: Excluded Day Type from leave calculation
+        isAllowBackdated:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow employee apply leave although didn’t follow rule in
+              Apply Within
+    LeaveTypeServiceYearXmlDTO:
+      required:
+      - carryForward
+      - entitledDays
+      - id
+      - serviceYearFrom
+      - serviceYearTo
+      type: object
+      properties:
+        id:
+          type: number
+          description: Id for leavetype service year
+          example: 1.0
+        serviceYearFrom:
+          type: number
+          description: Employee started service for company
+          example: 0.0
+        serviceYearTo:
+          type: number
+          description: Employee current service for company
+          example: 10.0
+        entitledDays:
+          type: number
+          description: Leave amount that entitle for employee for current year
+          example: 14.0
+        carryForward:
+          type: number
+          description: Leave balanced that can bring forward to next year
+          example: 3.0
+    LeaveTypeLevelsXmlDTO:
+      required:
+      - leaveEntitlement
+      type: object
+      properties:
+        leaveEntitlement:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaveTypeServiceYearXmlDTO'
+    LeaveTypePropertiesXmlDTO:
+      required:
+      - applyBeforeProperties
+      - applyFractionUnit
+      - applyInAdvance
+      - applyNextYear
+      - applyWithinProperties
+      - attachmentRequired
+      - claimEntitlement
+      - convertExceedLeaveAmount
+      - excludeDayType
+      - includeOtherLeaveType
+      - isAllowAfterJoinDate
+      - isAllowAppliedMoreThanBalance
+      - isAllowLeaveCancelAfterDate
+      - isLimitApplicationToCarryForward
+      - leaveEntitlementRounding
+      - leaveEntitlementType
+      - levels
+      - maxDayPerLeave
+      type: object
+      properties:
+        applyInAdvance:
+          type: boolean
+          description: Allow Applicant to Apply Leave in Advance
+          example: false
+        applyNextYear:
+          type: boolean
+          description: Allow Applicant to Apply Leave of the Following Year
+          example: false
+        claimEntitlement:
+          type: boolean
+          description: Allow Applicant to claim entitlement (E.g. work OT,AL/RL
+          example: false
+        applyFractionUnit:
+          type: boolean
+          description: Allow Applicant to Apply Fraction of Unit (0.5 or 0.25)
+          example: false
+        includeOtherLeaveType:
+          type: string
+          description: Include other leave type in balance calculation
+          example: paste leavetype_guid here
+        attachmentRequired:
+          type: boolean
+          description: 'Attach Certificate/ Supporting Documents (e.g.: Medical Certificate)'
+          example: false
+        excludeDayType:
+          title: ExcludeDayTypeXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ExcludeDayTypeXmlDTO'
+          - type: object
+            description: Excluded Day Type from leave calculation
+        applyBeforeProperties:
+          title: ApplyBeforePropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ApplyBeforePropertiesXmlDTO'
+          - type: object
+            description: Apply Before Properties
+        applyWithinProperties:
+          title: ApplyWithinPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ApplyWithinPropertiesXmlDTO'
+          - type: object
+            description: Apply Within Properties
+        isAllowAppliedMoreThanBalance:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow employee to apply more than leave balance
+        convertExceedLeaveAmount:
+          type: string
+          description: Convert exceeded leave amount to other leave type
+          example: paste AL leavetype_guid here
+        maxDayPerLeave:
+          type: number
+          description: Number of days that can be applied in each leave type
+          example: 0.0
+        isAllowAfterJoinDate:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow to Apply Leave After Join
+        isAllowLeaveCancelAfterDate:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow Applicant to cancel leave after start/expired date
+        isLimitApplicationToCarryForward:
+          title: GeneralPropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/GeneralPropertiesXmlDTO'
+          - type: object
+            description: Allow employee apply leave using current year bring forward
+              amount only
+        leaveEntitlementType:
+          type: string
+          description: Leave Entitlment type
+          example: eVjonf34fin9834uf83bfuu3084fn
+        leaveEntitlementRounding:
+          type: string
+          description: Leave entitlement rounding
+          example: Round Up 0.5
+        levels:
+          title: LeaveTypeLevelsXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LeaveTypeLevelsXmlDTO'
+          - type: object
+            description: Leave entitlement based on service year
+    CreateLeaveEntitlementTypeDTO:
+      required:
+      - code
+      - description
+      - leavetype_id
+      - property
+      type: object
+      properties:
+        code:
+          type: string
+          description: Leavetype entitlement code
+          example: AL-generic
+        description:
+          type: string
+          description: Entitlement description
+          example: Generic Annual Leave Entitlement
+        property:
+          title: LeaveTypePropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LeaveTypePropertiesXmlDTO'
+          - type: object
+            description: Policy properties
+        leavetype_id:
+          type: string
+          description: Leave type GUID
+          example: paste leavety_guid here
+    UpdateLeaveTypeEntitlementDto:
+      required:
+      - code
+      - description
+      - id
+      - property
+      type: object
+      properties:
+        code:
+          type: string
+          description: Leavetype entitlement code
+          example: AL-generic
+        description:
+          type: string
+          description: Entitlement description
+          example: Generic Annual Leave Entitlement
+        property:
+          title: LeaveTypePropertiesXmlDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LeaveTypePropertiesXmlDTO'
+          - type: object
+            description: Policy properties
+        id:
+          type: string
+          description: Leavetype id
+          example: 238fc8fa-6e70-fa83-7c9b-17f77108b691
+    UpdateCompanyDTO:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          description: Company id
+          example: 323bdfa7-eed2-8bf2-2274-b1cd9390c9ca
+        name:
+          type: string
+          description: Company name
+          example: Zen Computer Systems Sdn Bhd
+    HolidayDataDTO:
+      required:
+      - end
+      - holidayName
+      - start
+      - title
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title holiday
+          example: Hari Raya
+        holidayName:
+          type: string
+          description: Default name provided by calendarific
+          example: Hari Raya Puasa
+        start:
+          type: string
+          description: Start date
+          example: 2019-09-09
+        end:
+          type: string
+          description: End date
+          example: 2019-09-09
+    RestDataDTO:
+      required:
+      - fullname
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: 3 alphabet name of rest day
+          example: FRI
+        fullname:
+          type: string
+          description: Fullname of rest day
+          example: FRIDAY
+    CreateCalendarDetailsDTO:
+      required:
+      - code
+      - holiday
+      - rest
+      type: object
+      properties:
+        code:
+          type: string
+          description: Calendar profile code name
+          example: Selangor Calandar
+        holiday:
+          type: array
+          description: Holiday List
+          items:
+            $ref: '#/components/schemas/HolidayDataDTO'
+        rest:
+          type: array
+          description: Rest day list
+          items:
+            $ref: '#/components/schemas/RestDataDTO'
+    UpdateCalendarDTO:
+      required:
+      - calendar_guid
+      - data
+      - year
+      type: object
+      properties:
+        calendar_guid:
+          type: string
+          description: Calendar profile guid
+          example: 075f64d0-8cf1-11e9-805c-2f26cd7ad959
+        year:
+          type: number
+          description: Year of calendar
+          example: 2019.0
+        data:
+          $ref: '#/components/schemas/CreateCalendarDetailsDTO'
+    CalendarFilterDto:
+      required:
+      - country
+      - region
+      - year
+      type: object
+      properties:
+        year:
+          type: number
+          description: Calendarific filter - Year
+          example: 2019.0
+        country:
+          type: string
+          description: Calendarific filter - Country
+          example: MY
+        region:
+          type: string
+          description: Calendarific filter - Region
+          example: MY-10
+    CreateCalendarDTO:
+      required:
+      - code
+      - filter
+      - holiday
+      - rest
+      type: object
+      properties:
+        code:
+          type: string
+          description: Calendar profile code name
+          example: Selangor Calandar
+        filter:
+          title: CalendarFilterDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/CalendarFilterDto'
+          - type: object
+            description: Filter details
+        holiday:
+          type: array
+          description: Holiday List
+          items:
+            $ref: '#/components/schemas/HolidayDataDTO'
+        rest:
+          type: array
+          description: Rest day list
+          items:
+            $ref: '#/components/schemas/RestDataDTO'
+    UpdateUserCalendarDTO:
+      required:
+      - calendar_guid
+      - user_guid
+      type: object
+      properties:
+        user_guid:
+          type: array
+          description: User guid for selected user
+          example: '["b022d1b1-ff12-9cdf-2272-8c01cb75fbe0"]'
+          items:
+            type: string
+        calendar_guid:
+          type: string
+          description: Calendar guid for selected user
+          example: ddf22be0-8e59-11e9-979c-a39614dd33fc
+    StatusPermissionDTO:
+      required:
+      - value
+      type: object
+      properties:
+        value:
+          type: boolean
+          description: Status permission
+          example: true
+    AllowLeaveSetupDTO:
+      required:
+      - allowApprovalGroupSetup
+      - allowLeaveEntitlementSetup
+      - allowLeaveTypeSetup
+      - allowYearEndClosingSetup
+      type: object
+      properties:
+        allowLeaveTypeSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup leavetype
+        allowLeaveEntitlementSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup leave entitlement
+        allowApprovalGroupSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup approval group
+        allowYearEndClosingSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup year end closing
+    LevelPermissionDTO:
+      required:
+      - level
+      - value
+      type: object
+      properties:
+        value:
+          type: boolean
+          description: Status permission
+          example: true
+        level:
+          type: string
+          description: Level access
+          example: All
+    AllowLeaveManagementSetupDTO:
+      required:
+      - allowApplyOnBehalf
+      - allowApprovalOverride
+      - allowLeaveAdjustmant
+      type: object
+      properties:
+        allowLeaveAdjustmant:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to adjust leave
+        allowApplyOnBehalf:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to apply on behalf
+        allowApprovalOverride:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to override approval
+    AllowProfileManagementSetupDTO:
+      required:
+      - allowChangePassword
+      - allowEditProfile
+      - allowProfileAdmin
+      - allowViewProfile
+      type: object
+      properties:
+        allowViewProfile:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to view profile
+        allowEditProfile:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to edit profile
+        allowChangePassword:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to change password
+        allowProfileAdmin:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to use profile admin
+    RolePropertiesDTO:
+      required:
+      - allowAttendanceSetup
+      - allowClientSetup
+      - allowLeaveManagement
+      - allowLeaveSetup
+      - allowProfileManagement
+      - allowViewCalendar
+      - allowViewReport
+      type: object
+      properties:
+        allowLeaveSetup:
+          title: AllowLeaveSetupDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/AllowLeaveSetupDTO'
+          - type: object
+            description: Allow user to setup leave
+        allowViewReport:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to view report
+        allowViewCalendar:
+          title: LevelPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/LevelPermissionDTO'
+          - type: object
+            description: Allow user to view calendar
+        allowLeaveManagement:
+          title: AllowLeaveManagementSetupDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/AllowLeaveManagementSetupDTO'
+          - type: object
+            description: Allow user manage leave
+        allowProfileManagement:
+          title: AllowProfileManagementSetupDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/AllowProfileManagementSetupDTO'
+          - type: object
+            description: Allow user to manage profile
+        allowClientSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup client
+        allowAttendanceSetup:
+          title: StatusPermissionDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/StatusPermissionDTO'
+          - type: object
+            description: Allow setup attendance
+    RoleDTO:
+      required:
+      - code
+      - description
+      - property
+      type: object
+      properties:
+        code:
+          type: string
+          description: Role code
+          example: Department Admin
+        description:
+          type: string
+          description: Description for role
+          example: Department Admin for all staff
+        property:
+          title: RolePropertiesDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/RolePropertiesDTO'
+          - type: object
+            description: Properties role
+    UpdateRoleDTO:
+      required:
+      - data
+      - role_guid
+      type: object
+      properties:
+        role_guid:
+          type: string
+          description: Role guid
+          example: 7ed41000-98aa-11e9-b9d9-0901b57c06f4
+        data:
+          title: RoleDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/RoleDTO'
+          - type: object
+            description: Role details
+    UpdateUserRoleDTO:
+      required:
+      - role_guid
+      - user_guid
+      type: object
+      properties:
+        user_guid:
+          type: array
+          description: User guid for selected user
+          example: '["b022d1b1-ff12-9cdf-2272-8c01cb75fbe0"]'
+          items:
+            type: string
+        role_guid:
+          type: string
+          description: Role guid for selected user
+          example: 86bedde0-97d3-11e9-b12e-11cd8f889ff1
+    StartEndTimeXMLDto:
+      required:
+      - end_time
+      - start_time
+      type: object
+      properties:
+        start_time:
+          type: string
+          description: Start time
+          example: 09:00
+        end_time:
+          type: string
+          description: End time
+          example: 18:00
+    HalfdayXMLDto:
+      required:
+      - AM
+      - PM
+      type: object
+      properties:
+        AM:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: First slot time for half day
+        PM:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: Second slot time for half day
+    QuarterdayXMLDto:
+      required:
+      - Q1
+      - Q2
+      - Q3
+      - Q4
+      type: object
+      properties:
+        Q1:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: First slot time for half day
+        Q2:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: Second slot time for half day
+        Q3:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: Third slot time for half day
+        Q4:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: Forth slot time for half day
+    WorkingHoursXMLDto:
+      required:
+      - fullday
+      - halfday
+      - quarterday
+      type: object
+      properties:
+        fullday:
+          title: StartEndTimeXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/StartEndTimeXMLDto'
+          - type: object
+            description: Fullday for working hours details
+        halfday:
+          title: HalfdayXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/HalfdayXMLDto'
+          - type: object
+            description: Halfday for working hours details
+        quarterday:
+          title: QuarterdayXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/QuarterdayXMLDto'
+          - type: object
+            description: Quarterday for working hours details
+    WorkingHoursDTO:
+      required:
+      - code
+      - description
+      - property
+      type: object
+      properties:
+        code:
+          type: string
+          description: Code name for working hours profile
+          example: Cyberjaya Branch normal time
+        description:
+          type: string
+          description: Description of working hours profile id
+          example: Normal time for branch cyberjaya
+        property:
+          title: WorkingHoursXMLDto
+          type: object
+          allOf:
+          - $ref: '#/definitions/WorkingHoursXMLDto'
+          - type: object
+            description: Properties for working hours details
+    UpdateWorkingHoursDTO:
+      required:
+      - data
+      - working_hours_guid
+      type: object
+      properties:
+        working_hours_guid:
+          type: string
+          description: Working hours guid
+          example: 460188f0-d39e-11e9-8edf-23055f06a6ea
+        data:
+          title: WorkingHoursDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/WorkingHoursDTO'
+          - type: object
+            description: Working hours details
+    UpdateUserWorkingHoursDTO:
+      required:
+      - user_guid
+      - working_hours_guid
+      type: object
+      properties:
+        user_guid:
+          type: array
+          description: User guid for selected user
+          example: '["b022d1b1-ff12-9cdf-2272-8c01cb75fbe0"]'
+          items:
+            type: string
+        working_hours_guid:
+          type: string
+          description: Working hours guid for selected user
+          example: 7eda5eb0-d39c-11e9-8edf-23055f06a6ea
+    MasterSetupDTO:
+      required:
+      - newName
+      - oldName
+      type: object
+      properties:
+        oldName:
+          type: string
+          description: Data to change e.g Sentul Branch
+          example: Sentul
+        newName:
+          type: string
+          description: New data to replace old data
+          example: Klang
+    ApprovalConfirmationXML:
+      required:
+      - approvalLevel
+      - escalateAfterDays
+      - requirement
+      type: object
+      properties:
+        requirement:
+          type: string
+          description: requirement
+          example: Anyone, Everyone, Superior
+        approvalLevel:
+          type: number
+          description: approvalLevel
+          example: 1.0
+        escalateAfterDays:
+          type: number
+          description: escalateAfterDays
+          example: 1.0
+    ForfeitCFLeave:
+      required:
+      - day
+      - month
+      - value
+      type: object
+      properties:
+        value:
+          type: boolean
+          description: allow policy for forfeit carry forward
+          example: true
+        day:
+          type: number
+          description: starting day of forfeit carry forward leave
+          example: 1.0
+        month:
+          type: string
+          description: starting month of forfeit carry forward leave
+          example: April
+    AllowYearEndClosing:
+      required:
+      - day
+      - month
+      - relativeYear
+      - value
+      type: object
+      properties:
+        value:
+          type: boolean
+          description: allow year end closing policy
+          example: true
+        day:
+          type: number
+          description: starting day to allow setup year end closing
+          example: 1.0
+        month:
+          type: string
+          description: starting month to allow setup year end closing
+          example: November
+        relativeYear:
+          type: string
+          description: starting year to allow setup year end closing
+          example: This year/ Next year
+    AnniversaryBonusDTO:
+      required:
+      - allowAutoApplyLeave
+      - applyLeaveOnDate
+      type: object
+      properties:
+        allowAutoApplyLeave:
+          type: boolean
+          description: Allow anniversary leave or not
+          example: true
+        applyLeaveOnDate:
+          type: array
+          description: Auto apply anniversary leave on
+          example:
+          - birthday
+          - join-date
+          items:
+            type: string
+    CreateGeneralLeavePolicyDTO:
+      required:
+      - allowYearEndClosing
+      - anniversaryBonus
+      - applyOnBehalfConfirmation
+      - approvalConfirmation
+      - emailReminder
+      - forfeitCFLeave
+      - tenantCompanyId
+      type: object
+      properties:
+        approvalConfirmation:
+          title: ApprovalConfirmationXML
+          type: object
+          allOf:
+          - $ref: '#/definitions/ApprovalConfirmationXML'
+          - type: object
+            description: approval confirmation
+        forfeitCFLeave:
+          title: ForfeitCFLeave
+          type: object
+          allOf:
+          - $ref: '#/definitions/ForfeitCFLeave'
+          - type: object
+            description: forfeit carry forward leave on this day
+        allowYearEndClosing:
+          title: AllowYearEndClosing
+          type: object
+          allOf:
+          - $ref: '#/definitions/AllowYearEndClosing'
+          - type: object
+            description: allow year end closing
+        applyOnBehalfConfirmation:
+          type: boolean
+          description: apply on behalf comfirmation
+          example: false
+        emailReminder:
+          type: boolean
+          description: allow email reminder features
+          example: false
+        anniversaryBonus:
+          title: AnniversaryBonusDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/AnniversaryBonusDTO'
+          - type: object
+            description: Anniversary leave setup
+        tenantCompanyId:
+          type: string
+          description: tenant company guid
+          example: 323bdfa7-eed2-8bf2-2274-b1cd9390c9ca
+    UpdateGeneralLeavePolicyDTO:
+      required:
+      - data
+      - generalPolicyId
+      type: object
+      properties:
+        generalPolicyId:
+          type: string
+          description: general leave policy guid
+          example: a0a77df0-ad24-11e9-95c9-07cfedcb23c0
+        data:
+          title: CreateGeneralLeavePolicyDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/CreateGeneralLeavePolicyDTO'
+          - type: object
+            description: policy data
+    Date:
+      type: object
+    ApplyLeaveDataDTO:
+      required:
+      - dayType
+      - endDate
+      - quarterDay
+      - slot
+      - startDate
+      type: object
+      properties:
+        startDate:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: Start date
+            example: 2019-09-09
+        endDate:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: End date
+            example: 2019-09-09
+        dayType:
+          type: number
+          description: Type of Day, 0 = Full Day, 1 = Half Day, 2 = Quarter Day
+          example: 1.0
+        slot:
+          type: string
+          description: Half of slot, AM = Morning , PM = Afternoon
+          example: AM
+        quarterDay:
+          type: string
+          description: Type of Quarter, Q1 = First , Q2 = Second, Q3 = Third, Q4 =
+            Forth
+          example: Q1 if dayType 2
+    ApplyLeaveDTO:
+      required:
+      - attachment
+      - data
+      - leaveTypeID
+      - reason
+      type: object
+      properties:
+        leaveTypeID:
+          type: string
+          description: Leavetype id
+          example: 238fc8fa-6e70-fa83-7c9b-17f77108b691
+        reason:
+          type: string
+          description: Reason for leave
+          example: Hari raya
+        attachment:
+          type: string
+          description: Attachment filename
+          example: filename.jpg
+        data:
+          title: ApplyLeaveDataDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ApplyLeaveDataDTO'
+          - type: object
+            description: Leave details
+            example: ""
+    ApplyLeaveBundleDTO:
+      required:
+      - leaveDetails
+      - userId
+      type: object
+      properties:
+        userId:
+          type: array
+          description: Array of user guid
+          example:
+          - bb8b692b-aca9-3a47-180c-68a139d47a35
+          - a9653bdf-e42b-b4bd-2bb1-9224cd06646e
+          items:
+            type: string
+        leaveDetails:
+          title: ApplyLeaveDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/ApplyLeaveDTO'
+          - type: object
+            description: Details of leave
+    ApprovedLeaveDTO:
+      required:
+      - id
+      - reason
+      type: object
+      properties:
+        id:
+          type: string
+          description: Leave transaction guid
+          example: 0624d2b0-bda9-11e9-8428-0521341e5440
+        reason:
+          type: string
+          description: Reason
+          example: Happy holiday
+    UpdateApprovalDTO:
+      required:
+      - leaveTransactionId
+      - remark
+      - status
+      type: object
+      properties:
+        leaveTransactionId:
+          type: array
+          description: Leave transaction guid
+          example: '["1b187cd0-82b2-11e9-80ee-51eec243a49b"]'
+          items:
+            type: string
+        status:
+          type: string
+          description: Status approval override
+          example: APPROVED
+        remark:
+          type: string
+          description: Remark approval override
+          example: Hari raya leave
+    LeaveAdjustmentDTO:
+      required:
+      - leaveTypeId
+      - noOfDays
+      - reason
+      - userId
+      type: object
+      properties:
+        leaveTypeId:
+          type: string
+          description: Leave type guid
+          example: 85747738-66bf-8cb1-768a-d73319c61759
+        noOfDays:
+          type: number
+          description: Number of days
+          example: 16.0
+        userId:
+          type: array
+          description: Array of user guid
+          example: '["697b25ac-bff1-b1d1-f17e-fa0206fc7a2a","b022d1b1-ff12-9cdf-2272-8c01cb75fbe0"]'
+          items:
+            type: string
+        reason:
+          type: string
+          description: Reason to adjust
+          example: Bonus Leave
+    UpdateAnnouncementDto:
+      required:
+      - announcementId
+      - attachment
+      - isPinned
+      - message
+      - title
+      type: object
+      properties:
+        announcementId:
+          type: string
+          description: Announcement guid
+          example: BHKHJ*&^GBYUHIB*&YHBI978
+        title:
+          type: string
+          description: Title announcement
+          example: Please apply leave on 11 September
+        message:
+          type: string
+          description: Message announcement
+          example: We are gonna close our office on 11 september. All employee need
+            to apply leave 3 days before the date
+        isPinned:
+          type: number
+          description: Pinned post announcement
+          example: 1.0
+        attachment:
+          type: array
+          description: Attachment file announcement
+          example: '["779419_firstfile.png","6987604_secondfile.jpg"]'
+          items:
+            type: string
+    CreateAnnouncementDto:
+      required:
+      - attachment
+      - isPinned
+      - message
+      - title
+      type: object
+      properties:
+        title:
+          type: string
+          description: Title of announcement
+          example: Notice of requirement to take annual leave for Hari Raya festival
+        message:
+          type: string
+          description: Message of announcement
+          example: "Dear all,\n\n  In accordance with Hari Raya celebration, we would\
+            \ like to request all staff to take 1 day annual leave due to a close\
+            \ down of operations on 7 June 2019. Kindly apply annual leave for the\
+            \ low productivity period and take this as an opportunity to have a substantial\
+            \ break for family. \n  \n  This is not applicable to Manage365 and backup\
+            \ of Resident Engineer.\n  "
+        isPinned:
+          type: number
+          description: Pinned post announcement
+          example: 1.0
+        attachment:
+          type: array
+          description: Attachment file announcement
+          example: '["779419_firstfile.png","6987604_secondfile.jpg"]'
+          items:
+            type: string
+    UpdateEmploymentDetailDTO:
+      required:
+      - bankAccountName
+      - bankAccountNumber
+      - branch
+      - dateOfConfirmation
+      - dateOfJoin
+      - dateOfResign
+      - department
+      - designation
+      - division
+      - employeeNumber
+      - employmentStatus
+      - employmentType
+      - epfNumber
+      - id
+      - incomeTaxNumber
+      - reportingTo
+      - workLocation
+      type: object
+      properties:
+        workLocation:
+          type: string
+          description: Work Location
+          example: Cyberjaya
+        department:
+          type: string
+          description: Department name
+          example: Research and Development
+        branch:
+          type: string
+          description: Branch name
+          example: Cyberjaya
+        division:
+          type: string
+          description: Division name
+          example: IT Division
+        reportingTo:
+          type: string
+          description: Manager user guid
+          example: b022d1b1-ff12-9cdf-2272-8c01cb75fbe0
+        bankAccountName:
+          type: string
+          description: Bank name
+          example: Cimb Bank Berhad
+        bankAccountNumber:
+          type: string
+          description: bank account number
+          example: "7071516435"
+        epfNumber:
+          type: string
+          description: EPF Account number
+          example: TY279FY
+        incomeTaxNumber:
+          type: string
+          description: Income tax number
+          example: "22170145"
+        id:
+          type: string
+          description: User info guid
+          example: 0051f8ef-00aa-1543-08ee-bddb6a00524e
+        employeeNumber:
+          type: string
+          description: Personal employee number
+          example: 941229-10-5367
+        designation:
+          type: string
+          description: Designation
+          example: Service Desk Consultant
+        employmentType:
+          type: string
+          description: Employee type (Temporary,Permanent)
+          example: Permanent
+        employmentStatus:
+          type: string
+          description: Employee status (Confirmed,Terminated,Probation)
+          example: Confirmed
+        dateOfJoin:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: Date of join
+            example: 2019-09-09
+        dateOfConfirmation:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: Confirmation date
+            example: 2019-10-09
+        dateOfResign:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: Date of resign
+            example: 2019-12-09
+    DisableUserDTO:
+      required:
+      - resign_date
+      - user_guid
+      type: object
+      properties:
+        user_guid:
+          type: string
+          description: User guid to update resign at
+          example: b022d1b1-ff12-9cdf-2272-8c01cb75fbe0
+        resign_date:
+          title: Date
+          type: object
+          allOf:
+          - $ref: '#/definitions/Date'
+          - type: object
+            description: Resign date
+            example: 2019-08-10
+    AssignLeavePolicyDTO:
+      required:
+      - leaveEntitlementId
+      - leaveTypeId
+      - userId
+      type: object
+      properties:
+        userId:
+          type: array
+          description: Array of user guid
+          example:
+          - bb8b692b-aca9-3a47-180c-68a139d47a35
+          - a9653bdf-e42b-b4bd-2bb1-9224cd06646e
+          items:
+            type: string
+        leaveTypeId:
+          type: string
+          description: Leave type guid
+          example: 85747738-66bf-8cb1-768a-d73319c61759
+        leaveEntitlementId:
+          type: string
+          description: Leave entitlement guid
+          example: 79380630-54fb-11e9-aacc-f700d94a1817
+    CreateReplacementLeaveDTO:
+      required:
+      - leaveEntitlementId
+      - leaveTypeId
+      - noOfDays
+      - userId
+      type: object
+      properties:
+        userId:
+          type: array
+          description: Array of user guid
+          example:
+          - bb8b692b-aca9-3a47-180c-68a139d47a35
+          - a9653bdf-e42b-b4bd-2bb1-9224cd06646e
+          items:
+            type: string
+        leaveTypeId:
+          type: string
+          description: Leave type guid
+          example: 85747738-66bf-8cb1-768a-d73319c61759
+        leaveEntitlementId:
+          type: string
+          description: Leave entitlement guid
+          example: 79380630-54fb-11e9-aacc-f700d94a1817
+        noOfDays:
+          type: number
+          description: Number of replacement days need to be added
+          example: 2.0
+    EntitlementClaimDetailsDTO:
+      required:
+      - expiredDate
+      - leaveTypeId
+      - noOfDays
+      - reason
+      - userId
+      type: object
+      properties:
+        userId:
+          type: string
+          description: User id
+          example: 507a60c0-18a5-11eb-ba6c-3972e8c82172
+        leaveTypeId:
+          type: string
+          description: Leave type id
+          example: 1b048af0-e066-11ea-865e-b132fb3666d0
+        noOfDays:
+          type: string
+          description: Number of days
+          example: "1.5"
+        expiredDate:
+          type: string
+          description: Expired date
+          example: 2020-12-12
+        reason:
+          type: string
+          description: Reason
+          example: OT last night
+    CreateEntitlementClaimDTO:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: array
+          description: Entitlement data
+          items:
+            $ref: '#/components/schemas/EntitlementClaimDetailsDTO'
+    ReactivateUserDTO:
+      required:
+      - calendarId
+      - roleProfileId
+      - workingHoursId
+      type: object
+      properties:
+        roleProfileId:
+          type: string
+          description: Role profile guid
+          example: 3d820240-207e-11ea-9251-93c64e03841d
+        workingHoursId:
+          type: string
+          description: Working hours guid
+          example: 9b1fb120-d46d-11e9-8654-573b14342361
+        calendarId:
+          type: string
+          description: Calendar profile guid
+          example: 0b8e2250-9721-11e9-bdd4-6dce2bf8cec4
+    EmploymentDetailsDTO:
+      required:
+      - bankAccountName
+      - bankAccountNumber
+      - branch
+      - companyId
+      - costcentre
+      - dateOfConfirmation
+      - dateOfJoin
+      - dateOfResignation
+      - department
+      - designation
+      - employeeId
+      - employmentStatus
+      - employmentType
+      - epfNumber
+      - incomeTaxNumber
+      - reportingTo
+      - section
+      type: object
+      properties:
+        employeeId:
+          type: string
+          description: Staff id
+          example: "3909"
+        companyId:
+          type: string
+          description: Company id
+          example: 323bdfa7-eed2-8bf2-2274-b1cd9390c9ca
+        department:
+          type: string
+          description: Department
+          example: Research and Development
+        designation:
+          type: string
+          description: Designation
+          example: Service Desk Consultant
+        section:
+          type: string
+          description: Section
+          example: Management
+        branch:
+          type: string
+          description: Branch
+          example: Cyberjaya
+        costcentre:
+          type: string
+          description: Costcentre
+          example: Service
+        employmentStatus:
+          type: string
+          description: Employment status
+          example: Confirmed
+        employmentType:
+          type: string
+          description: Employment Type
+          example: Permanent
+        reportingTo:
+          type: string
+          description: Manager user guid
+          example: b022d1b1-ff12-9cdf-2272-8c01cb75fbe0
+        dateOfJoin:
+          type: string
+          description: Date of join
+          example: 2019-09-09
+        dateOfConfirmation:
+          type: string
+          description: Date of confirmation
+          example: 2019-10-09
+        dateOfResignation:
+          type: string
+          description: Date of resign
+          example: 2019-12-09
+        epfNumber:
+          type: string
+          description: EPF Number
+          example: TY279FY
+        incomeTaxNumber:
+          type: string
+          description: Income tax number
+          example: "22170145"
+        bankAccountName:
+          type: string
+          description: Bank account name
+          example: Cimb Bank Berhad
+        bankAccountNumber:
+          type: string
+          description: Bank account number
+          example: "7071516435"
+    EmergencyContactDetailsDTO:
+      required:
+      - contactName
+      - contactNumber
+      - contactRelationship
+      type: object
+      properties:
+        contactName:
+          type: string
+          description: Contact name
+          example: Raymond
+        contactNumber:
+          type: string
+          description: Contact number
+          example: "0197993312"
+        contactRelationship:
+          type: string
+          description: Contact relationship
+          example: Father
+    EducationDetailsDTO:
+      required:
+      - major
+      - qualificationLevel
+      - university
+      - year
+      type: object
+      properties:
+        qualificationLevel:
+          type: string
+          description: Qualification Level
+          example: Bachelor Degree
+        major:
+          type: string
+          description: Major course
+          example: Software Engineering
+        university:
+          type: string
+          description: University
+          example: Universiti Putra Malaysia
+        year:
+          type: string
+          description: Year duration period
+          example: 2011-2015
+    CertificationDetailsDTO:
+      required:
+      - certificationAttachment
+      - certificationEnrollYear
+      - certificationGraduateYear
+      - certificationName
+      type: object
+      properties:
+        certificationName:
+          type: string
+          description: Certification name
+          example: Bachelor Degree In Computer Science
+        certificationEnrollYear:
+          type: number
+          description: Certification enroll year
+          example: 2011.0
+        certificationGraduateYear:
+          type: number
+          description: Certification graduate year
+          example: 2015.0
+        certificationAttachment:
+          type: string
+          description: Certification attachment
+          example: attachment1.png
+    SpouseDetailsDTO:
+      required:
+      - spouseIdentificationNumber
+      - spouseName
+      type: object
+      properties:
+        spouseName:
+          type: string
+          description: Spouse name
+          example: Billy
+        spouseIdentificationNumber:
+          type: string
+          description: Spouse NRIC
+          example: "900912102212"
+    ChildDetailsDTO:
+      required:
+      - childIdentificationNumber
+      - childName
+      type: object
+      properties:
+        childName:
+          type: string
+          description: Child name
+          example: Akmal
+        childIdentificationNumber:
+          type: string
+          description: Child NRIC
+          example: "011012109814"
+    FamilyDetailsDTO:
+      required:
+      - child
+      - spouse
+      type: object
+      properties:
+        spouse:
+          type: array
+          description: Certification attachment
+          items:
+            $ref: '#/components/schemas/SpouseDetailsDTO'
+        child:
+          type: array
+          description: Certification attachment
+          items:
+            $ref: '#/components/schemas/ChildDetailsDTO'
+    PersonalDetailsDTO:
+      required:
+      - address1
+      - address2
+      - certification
+      - city
+      - country
+      - dob
+      - education
+      - emailAddress
+      - emergencyContact
+      - family
+      - fullname
+      - gender
+      - maritalStatus
+      - nationality
+      - nickname
+      - nric
+      - phoneNumber
+      - postcode
+      - race
+      - religion
+      - state
+      - workEmailAddress
+      - workPhoneNumber
+      type: object
+      properties:
+        fullname:
+          type: string
+          description: Full name
+          example: Nurul Hidayah Binti Romli
+        nickname:
+          type: string
+          description: Nick name
+          example: Pratap
+        nric:
+          type: string
+          description: NRIC
+          example: "9012121088135"
+        dob:
+          type: string
+          description: Date of birth
+          example: 1990-08-16
+        gender:
+          type: string
+          description: Gender (Female/ Male)
+          example: Male
+        maritalStatus:
+          type: string
+          description: Marital status (0-SINGLE,1-MARRIED)
+          example: Single
+        race:
+          type: string
+          description: Race
+          example: Chinese
+        religion:
+          type: string
+          description: Religion
+          example: Christian
+        nationality:
+          type: string
+          description: Nationality
+          example: Malaysian
+        phoneNumber:
+          type: string
+          description: Phone Number
+          example: 017-33314141
+        workPhoneNumber:
+          type: string
+          description: Work Phone Number
+          example: 019-88831235
+        emailAddress:
+          type: string
+          description: Email Address
+          example: pratap@gmail.com
+        workEmailAddress:
+          type: string
+          description: Work email address
+          example: pratap@zen.com.my
+        address1:
+          type: string
+          description: Address 1
+          example: Unit No. C-6-4, Block C
+        address2:
+          type: string
+          description: Address 2
+          example: Persiaran Ceria, Cyber 12
+        postcode:
+          type: number
+          description: Postcode
+          example: 63000.0
+        city:
+          type: string
+          description: City
+          example: Cyberjaya
+        state:
+          type: string
+          description: State
+          example: Selangor
+        country:
+          type: string
+          description: Country
+          example: Malaysia
+        emergencyContact:
+          type: array
+          description: Emergency contact details
+          items:
+            $ref: '#/components/schemas/EmergencyContactDetailsDTO'
+        education:
+          type: array
+          description: Education details
+          items:
+            $ref: '#/components/schemas/EducationDetailsDTO'
+        certification:
+          type: array
+          description: Certification details
+          items:
+            $ref: '#/components/schemas/CertificationDetailsDTO'
+        family:
+          title: FamilyDetailsDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/FamilyDetailsDTO'
+          - type: object
+            description: Family details
+    UpdateUserInfoDetailsDTO:
+      required:
+      - employmentDetail
+      - notificationRule
+      - personalDetails
+      type: object
+      properties:
+        employmentDetail:
+          title: EmploymentDetailsDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/EmploymentDetailsDTO'
+          - type: object
+            description: Employment detail
+        notificationRule:
+          type: array
+          description: Notification rule - user guid to notify
+          example:
+          - 7756ab98-e69e-48e1-5fc3-b7e30a157cf3
+          - 0cc543ea-2dc6-ce6e-d10d-a11a9e946c2f
+          items:
+            type: string
+        personalDetails:
+          title: PersonalDetailsDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/PersonalDetailsDTO'
+          - type: object
+            description: Personal details
+    UpdateUserInfoItemDTO:
+      required:
+      - root
+      type: object
+      properties:
+        root:
+          title: UpdateUserInfoDetailsDTO
+          type: object
+          allOf:
+          - $ref: '#/definitions/UpdateUserInfoDetailsDTO'
+          - type: object
+            description: Update User Info Details DTO
+    EntitlementClaimRequestDto:
+      required:
+      - attachment
+      - endDate
+      - leavetypeGuid
+      - noOfDays
+      - requestRemarks
+      - startDate
+      - userGuid
+      type: object
+      properties:
+        userGuid:
+          type: string
+          description: User guid requestor
+          example: 697b25ac-bff1-b1d1-f17e-fa0206fc7a2a
+        leavetypeGuid:
+          type: string
+          description: Leave type guid
+          example: aa84b3c0-7849-11e9-a449-bd6134fe73e4
+        startDate:
+          type: string
+          description: Start date
+          example: 2019-08-28 05:45:24
+        endDate:
+          type: string
+          description: End date
+          example: 2019-08-28 09:50:24
+        noOfDays:
+          type: string
+          description: No. of days
+          example: "1.5"
+        requestRemarks:
+          type: string
+          description: Request remarks
+          example: Work ot last night
+        attachment:
+          type: string
+          description: Attachment
+          example: prove.jpg
+    EntitlementClaimApproveDto:
+      required:
+      - entitlementClaimId
+      - finalApprovalRemarks
+      - status
+      type: object
+      properties:
+        entitlementClaimId:
+          type: string
+          description: Entitlement claim guid
+          example: 5003f8a0-6445-11ea-aa9f-319f491ed5a7
+        status:
+          type: string
+          description: Entitlement claim status
+          example: APPROVED
+        finalApprovalRemarks:
+          type: string
+          description: Final approval remarks
+          example: Prove approved
+    ProfilePictureDto:
+      required:
+      - profilePictureFile
+      - userGuid
+      type: object
+      properties:
+        userGuid:
+          type: string
+          description: user guid
+          example: 697b25ac-bff1-b1d1-f17e-fa0206fc7a2a
+        profilePictureFile:
+          type: string
+          description: profile picture file
+          example: 1577328758_ZENlogo1.png
+  securitySchemes:
+    bearer:
+      type: apiKey
+      name: Authorization
+      in: header

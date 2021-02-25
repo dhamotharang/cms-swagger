@@ -1,0 +1,34 @@
+openapi: 3.0.0
+
+info:
+  title: JPN API
+  description: API Specifications for JPN
+  version: 1.0.0
+  contact:
+    name: R&D
+    email: rdoffice@zen.com.my
+
+servers:
+  - url: jpn-server
+    description: JPN API server
+
+paths:
+  /request:
+    get:
+      description: Describe this route
+      summary: Describe this route
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+      parameters:
+        - in: query
+          name: mykad
+          description: MyKad number of requested person, without dash (-) symbol
+          required: true
+          schema:
+            type: string
+            example: 801231111234

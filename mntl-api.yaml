@@ -1,0 +1,98 @@
+openapi: 3.0.0
+
+info:
+  title: MNTL-API
+  description: API Specification for MNTL
+  version: 1.0.0
+  contact:
+    name: R&D
+    email: rdoffice@zen.com.my
+
+servers:
+  - url: mntl-server-address
+    description: MNTL server
+
+paths:
+  /statistics:
+    get:
+      description: Get common statistics
+      summary: Get common statistics for MNTL
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+  /yearchart:
+    get:
+      description: Get yearly statistic, to be displayed as charts
+      summary: Get yearly statistic, to be displayed as charts
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+  /listing:
+    get:
+      description: Get listing of MNTL requests
+      summary: Listing of all MNTL requests
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+  /request:
+    get:
+      description: Request MNTL details of 1 phone number
+      summary: Get details of 1 phone number. Returns Telco information for new request, and detailed owner information for existing requests
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+      parameters:
+        - in: query
+          name: reportno
+          description: Report number
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: csmsno
+          description: CMS case number
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: phonenumber
+          description: Mobile phone number to track
+          required: true
+          schema:
+            type: string
+            example: 601234567890
+  /mnpsearch:
+    get:
+      description: Get Telco information of 1 phone number
+      summary: Get Telco information of 1 phone number
+      responses:
+        200:
+          description: Description
+          content: 
+            application/json:
+              schema:
+                type: string
+      parameters:
+        - in: query
+          name: phonenumber
+          description: Phone number
+          required: true
+          schema:
+            type: string
+            example: 601234567890
