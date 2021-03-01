@@ -1,0 +1,1322 @@
+{
+    "source": "mockoon:1.11.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 13,
+                "name": "CMS Integration",
+                "endpointPrefix": "iosapps_GOGI986578HGGFFYHUHCDRHJ",
+                "latency": 0,
+                "port": 3000,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "Telegram Mockup: Send any text message to any registered user",
+                        "method": "get",
+                        "endpoint": "func.telegram_sendmsg.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\":true,\n  \"result\":{\n    \"message_id\":322791,\n    \"from\":{\"id\":844036863,\n    \"is_bot\":true,\n    \"first_name\":\"Optimus\",\n    \"username\":\"nied_bot\"\n    },\n    \"chat\":{\n      \"id\":7326974,\n      \"first_name\":\"Anuar\",\n      \"username\":\"hairulanuar\",\n      \"type\":\"private\"\n    },\n      \"date\": 1614219858,\n  \"text\":\"{{ queryParam 'msg' }}\"\n  \n}\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "chatid",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "msg",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Telegram Mockup: Send any text message to any registered user",
+                        "method": "post",
+                        "endpoint": "func.telegram_sendmsg.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\":true,\n  \"result\":{\n    \"message_id\":322791,\n    \"from\":{\"id\":844036863,\n    \"is_bot\":true,\n    \"first_name\":\"Optimus\",\n    \"username\":\"nied_bot\"\n    },\n    \"chat\":{\n      \"id\":7326974,\n      \"first_name\":\"Anuar\",\n      \"username\":\"hairulanuar\",\n      \"type\":\"private\"\n    },\n      \"date\": 1614219858,\n  \"text\":\"{{ queryParam 'msg' }}\"\n  \n}\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "chatid",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "msg",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "MNTL Mockup",
+                        "method": "get",
+                        "endpoint": "func.mntl.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 400,
+                                "label": "Parameter not supplied",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\n   {\n      \"date_created\":\"2020-07-10 14:14:27\",\n      \"date_finish\":\"2020-07-20 15:41:28\",\n      \"report_number\":\"{{ queryParam 'value' }}\",\n      \"cms_number\":\"SERENDAH\\/1586\\/20\",\n      \"number\":\"0162097901\",\n      \"telco\":\"DiGi Telecommunications Sdn Bhd\",\n      \"name\":\"SAILA HADIALUZ BIN NAZAR @ NIZAR\",\n      \"ic\":\"790101026111\",\n      \"address\":\"Lot 7 Taman Langkawi Mukim Kuah 07000 Langka\",\n      \"active_date\":\"2016-07-28\",\n      \"expired_date\":\"0000-00-00\",\n      \"days\":\"10\",\n      \"overlimit\":\"4\",\n      \"star\":4\n   }\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Search CMS (search=auto)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "auto",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "value",
+                                        "value": "CMS\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"year\":\"{{ queryParam 'year' }}\",\n  \"max\":\"{{ queryParam 'max' }}\",\n  \"total\":\"{{ oneOf (array 508 340 230 450) }}\",\n  \"total_page\":{{ oneOf (array 51 34 23 45) }}\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=list_count",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list_count",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "max",
+                                        "value": "10|20|30|40|50",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "year",
+                                        "value": "2019",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[{\"date_created\":\"2019-04-09 14:30:24\",\"date_finish\":\"2019-04-09 17:11:10\",\"report_number\":\"EP71\\/19\",\"cms_number\":\"CMS19552 - URGENT\",\"number\":\"0135368998\",\"telco\":\"Celcom Axiata Bhd\",\"name\":\"SYAKILA ANAK PETER\",\"ic\":\"960414135510\",\"address\":\"-\",\"active_date\":\"0000-00-00\",\"expired_date\":\"2017-03-11\",\"days\":\"0\",\"overlimit\":\"14\",\"star\":5}]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=list",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "max",
+                                        "value": "10|20|30|40|50",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "page",
+                                        "value": "\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "year",
+                                        "value": "2019|2020|2021",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "order",
+                                        "value": "ASC|DESC",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\"2021\",\"2020\",\"2019\"]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "list_years",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list_years",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "MNTL Mockup: MNP Search",
+                        "method": "get",
+                        "endpoint": "func.telco.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\n   {\n      \"phone\":\"+{{ queryParam 'search' }}\",\n      \"carrier\":\"Maxis Bhd\",\n      \"type\":\"mobile\",\n      \"ported\":true,\n      \"ported-to\":\"DiGi Telecommunications\",\n      \"telco-info\":\"DiGi Telecommunications Sdn. Bhd.\\nLot 10, Jalan Delima 1\\/1\\nSubang Hi-Tech Industrial Park\\n40000 Shah Alam\\nE-mel:\\tauthorityrequest@digi.com.my\\n\"\n   }\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "nomnp",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "601\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "mnp",
+                                        "value": "nomnp",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\n   {\n      \"phone\":\"{{ queryParam 'search' }}\",\n      \"international-number\":\"{{ queryParam 'search' }}\",\n      \"carrier\":\"DIGI\",\n      \"origin-network\":\"DIGI\",\n      \"type\":\"mobile\",\n      \"number-type\":\"mobile\",\n      \"ported\":false,\n      \"telco-info\":\"DiGi Telecommunications Sdn. Bhd.\\nLot 10, Jalan Delima 1\\/1\\nSubang Hi-Tech Industrial Park\\n40000 Shah Alam\\nE-mel:\\tauthorityrequest@digi.com.my\\n\"\n   }\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "mnp",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "601\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "mnp",
+                                        "value": "mnp",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "JPN Mockup:  Get and list details (Photo in uuencode/uudecode)",
+                        "method": "get",
+                        "endpoint": "func.jpn.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n   \"AgencyCode\":\"Suruhanjaya Komunikasi dan Multimedia Malaysia\",\n   \"BranchCode\":\"Cyberjaya\",\n   \"UserId\":\"SKMMUSER1\",\n   \"TransactionCode\":\"T2\",\n   \"ReplyIndicator\":\"SUCCESS\",\n   \"MessageCode\":\"Please check\",\n   \"ICNumber\":\"910225035048\",\n   \"OldICnumber\":\"\",\n   \"Name\":\"NURLIYANA HUSNA BINTI AZMI\",\n   \"ResidentialStatus\":\"WARGANEGARA\",\n   \"RecordStatus\":\"AKTIF\",\n   \"DateOfBirth\":\"1991-02-25\",\n   \"Gender\":\"PEREMPUAN\",\n   \"Race\":\"MELAYU\",\n   \"Religion\":\"ISLAM\",\n   \"EmailAddress\":\"\",\n   \"MobilePhoneNumber\":\"\",\n   \"PermanentAddress1\":\"LOT 1650\",\n   \"PermanentAddress2\":\"JALAN WAKAF STAN\",\n   \"PermanentAddress3\":\"KUBANG KERIAN\",\n   \"PermanentAddressPostcode\":\"16150\",\n   \"PermanentAddressCityCode\":\"KOTA BHARU\",\n   \"PermanentAddressStateCode\":\"KELANTAN\",\n   \"CorrespondenceAddress1\":\"LOT 1650 JALAN WAKAF STAN\",\n   \"CorrespondenceAddress2\":\"KUBANG KERIAN\",\n   \"CorrespondenceAddressPostcode\":\"16150\",\n   \"CorrespondenceAddressCityCode\":\"KOTA BHARU\",\n   \"CorrespondenceAddressStateCode\":\"KELANTAN\",\n   \"CorrespondenceAddressCountryCode\":\"MALAYSIA\",\n   \"CorrespondenceAddressUpdateDate\":\"2009-07-20T00:00:00\",\n   \"Photo\":\"\\/9j\\/4AAQSkZJRgABAgAAAQABAAD\\/2wBDABoSExcTEBoXFRcdGxofJ0AqJyMjJ084PC9AXVJiYVxSWllndJR+Z22Mb1laga+CjJmepqemZHy2w7ShwZSjpp\\/\\/2wBDARsdHSciJ0wqKkyfalpqn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5\\/\\/wAARCADIAJYDASIAAhEBAxEB\\/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL\\/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6\\/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL\\/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6\\/9oADAMBAAIRAxEAPwDpqKKKgYUUUUwCiiigAooooAKKKKBBRRRTGFFFFABRRRQAUUUUAFFFFABRRRSAKKKKQBSUVFPMsKZb8B60ILEjOqqSxwBVSS\\/HSJC59egqtI7SnMn4D0phamdEaPcmN1cMPvKn0FMM9x\\/z2P8A3yKiLUm80GyprsTLc3C9JA3sy4qRNSZR+\\/jx\\/tLyKq7qM0XB0ovoa8cySruRgw9qlIzWGuUffG21v89av2t6JDskG2T+dCOadJx1RdopAaWgxCiiimMKKKKAEoooqLgFFFBpgRzSiKMu3as1nZ33v19PSpLqTzZ9v8Cf+hVAxoZ00odWBbimFqDTeppXOpIM0U7AFBI9QKAuN5oBxTyARxz9KaVxTC44GkYbh6HsfSk6UooTBo0LK581Cj\\/fXg+\\/vVwVhiQxSpMDgKcN9K2lORmnfU4asOVj6KKKRkFFFFMBKKKWkAlNdtqk+gp1Vr5ttq4HU8CgaKAG2PJ6tyfxphp78cVHQd8VoJTgp7CkA5AFWoYsD1qXoOUrESwE\\/e59qf5AxjHFWQmKXYKncwcyo0CkdKY0RQ5HPtVwrzUZApDUinR0+tSSpgkioh0q0zZO4pXepX1Fadk++1jJ64FZoNXNMbMLL\\/dcirRjXWly\\/S0gopHILRRRQAlFLSUAFZ1\\/Nm6jhA4ALk1oZrGZxLdySe5UfhQaU48zA9aQ9gOpoB5NR+cFkORnHakztbsWY4yOvWrSDFUFvAn3lZvcDirEWoW7HaSUP+0MVNjnlK5bApwpEdGGVIP0p2QBQZMjIqNhUzMo6mqs17bocFiT6AUalJjXUg1XddknoKVr+PsD+NRyTJJjHB6j0otbY0UrDugNWtLOGnX\\/AG8\\/mKqo25M1NZvsvtv99M\\/iM\\/41a1LqaxNUUopO1KKTOMKKKKBC0lFFMCKeQRQO5\\/hGayIxtCD8TWhqhxZOOmSB+oqg3+sH5UHTQV7saOnHepVjji6gYHrTIPmlAPYZqe4tRcx7WJCn0qWaVH0K51aziJ5PHXatPS+sbptoPzejDBqF9MkFo1tC8YjJzlhyPy60yPTp1aQytDIzgDdggjHpS0Mdbl9QIz8vSrS\\/dzVQI0cKByCw6kVZV8pSuN6leX5zg8j0qCSa0t2\\/eEFvQc1OcsXx1I4zVGawlZI\\/K8pZUbO485+tC31GyUahZynCjn3GKkKxyKMAY9qpJp8y2X2do0LFy5fP8vSrVlbSQIAzbgOOap2RKuNUbN47URHbewNn2x9aW4G2U+jLmonba2\\/H3Sv8\\/wD69NG61i0b4p1MQ5FOps4mLRRRSEFFFFMClqYzbqOuXH86oyffB96v6hzHH2+es6Xoc80mddDYdaf62TPatBOaz4QRcSenFX0OFz19hSYVCTYKMBe1OyCMVFI+EJpaGKuQStvkAqUD5cVBGh8zLkc1ZK4FT5mjstCGIc8\\/SpygNVNzRuG\\/hziritzTsKQnl01gFqXIqGQ\\/hRsJalC+P7yL33VBOMwv+HA+oqa5GZ4++FJ\\/WmOuYsdCSP5irRtDY3IvuL9KkpicCnVTONi0UUUhBRRRSAp35\\/1Qxn5v6VnvyTWhqHSL\\/f7fSs9+tNnZQ2FtuZCfbFWkYhvaqMTbJgc8GrvUA1LY6i1Ji57U04I2nmmscJuUZ9qq\\/aishEkbL79qnczSRP5LHkMcjoaUidxtICj1pi3aZGMfnUovIyOCD+NOwtRpiYnDuNvoBUhfFQPcoMZ60yO5SRuCT7kYoH6lzf3qJ2znvSn5QPemMcAHoOT+FAWsVZm3SY9BigD54ge7imZ3uW9ealgG68hHpkn8qpamq0izYXpTqQdKdVdTiCikopaiFoopKVwKmonEKHphxVButX9S5tsdywx+dUG+8aZ10NiMipreTIKnkjj\\/AOvUR6U0kjDDqKk6JK6L68jApJEEgGRz61DFNuXI6+hqwpDc0rHM1YgESqfnjB\\/2hQ0cBXiLn24q2EBo8sUXFdFE24bGQF9utWFiRFHyjjtUhFRu+OPekA0knk8VBcS5yi\\/jSSzZ+VeT1zUajB55xzmnYuMbjlGB71ZsQGunb+6uP61Wq5pajErdy9Wi6ukTRpaSlpnCFFFFIRFJPHEPnYL9TVQ6mvmhRG2zON+QBWeFUEd\\/c0pG7g9KLnYqC6lvUZd0seD8q81XbrVYtiIexPX61ZI4o6mkIcisNzSHg0tJjIpGo0gg5Xg06O4KEhuB60nSlIBpEyimXorgEDmpDMB3rKMY6jIo8s92JpGXsi3LdAZx1x0qq0jOcjgdM0gQDHc+tOAp7FKmhAMDFOxikxg0tM1SAVf0wEQk9AWJqgeB6U+G4e3kODuTuvpTRlVi5LQ2qWqP9qQBsEN9ccVbSRXXKkEe1FjhcWtx9FFFAjCz0pD0paTtSPUI5B8n1yamHKj6VE4+Q1InMa0ITA0nSnGm0DQdTS0lKeaAADIpGHBpRSP9yj0AXFJ2paTtSASjrTqOlMBO9Rgclj1PSn96THFAWEHApenQlfoaQd6D1\\/rTWmxLSJvtc6cCU\\/iKPt1x\\/wA9f0qONMZLck0\\/5fSndkezj2ENIRTuv0oqTS5EeSR1p0J+XFI4\\/eA9sYpYuD+lHUfQfikxSmigQ3vTsU3vThQMQ0Hpj3oNJ3+lMApaToaXFJAFNY4FL0FNHzHP4UwFApH6U7oKZ1oAX7oFIAMjvSZ3HrwP505TnOKGIfn0oyaQfPwOgpfLNILiRn5Fz1xTwKjXov0qUUIBjDIqJWxnH1qbtVde\\/wDu0DRZNNpxptAkIeKVTSNQtA+gE4\\/wo6Ckf79KelIENBzT6jWpKaGyJzubYPqakX16e1RD\\/j4b6VL3piEJ\\/Oo3ORtHHvTz96o2pAOYYG1eCe9LjYpx6daG++tK\\/wDqj9KBD0GFp1IvSlqQP\\/\\/ZwtOzQAAAAAAAAAA=\"\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get a person's details (search=ic)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "ic",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "ic",
+                                        "value": "\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\n   {\n      \"name\":\"ROSMAH BINTI MANSOR\",\n      \"ic\":\"511210055558\",\n      \"img\":\"\\/9j\\/4AAQSkZJRgABAgAAAQABAAD\\/2wCDEAAsAB4AIQAnACEAHAAsACcAJAAnADIALwAsADUAQgBvAEgAQgA9AD0AQgCIAGEAZgBQAG8AoQCNAKkApgCeAI0AmwCYALEAxwD\\/ANgAsQC8APEAvwCYAJsA3gEuAOAA8QEHAQ8BHQEgAR0ArADVATkBTwE2ARUBTAD\\/ARgBHQES\\/9sAgxEALwAyADIAQgA6AEIAggBIAEgAggESALcAmwC3ARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEgESARIBEv\\/BABEIAMgAlgMBIgACEQEDEQH\\/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv\\/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8\\/T19vf4+fr\\/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv\\/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8\\/T19vf4+fr\\/2gAMAwEAAhEDEQA\\/ANeiiigAooooAKKKKACiimNIi\\/eYD8aAH0VA13EO+aYbxc8DI96ALVFVReJ3H5VMkyP900ASUUUUAFFFFABRRRQAUUUUAFFFFABRRTWYIuT0oAUnA5qtNeKnC8moLm6J4HFUy2eaAJ5LqVz97H0qEv75phOKYXNAiUtSb6hLUUATCQVIkpByDVbd8tAagLGzaT+YMVarFt3YnCtircVw6EBjkUAX6KYjhulPoGFFFFABRRRQAUUUUAIxCjJ6VnXVyS2BxjpUt3Pt\\/pWYTuOTQAE5NJmkY4qMmgB5b0ptCqSasx2pagCtilxV4WVOFl70XAz8Ugq+9mcVVaFlPIoARTipFkPrxUDZFKCaBWL0UxQ+o9K0Ipd4zWMjVbtJcNtJoA06KapyKdQMKKKKACo5m2xk1JVO\\/fChO\\/WgDPupN7mohRIctSA0ANc8mkUZNA5q1bpgZPWgB8EWMZ61cRaiQVYQVIxwWnAU6gCiwDcUx4gR0qakNFgMm4t9pNU2GK25o9y1kzrtemgZGrVOrfpVepI2pkmtaTbxg9RVuse3fY4NayMGUEd6BjqKKKACs26bLM+eOgq\\/I22Mmsq7bESKf940AVCetJ2pvWnUAOiFXIqqxVaXpigETIx7LmnpcJu2sCppYvu0rxhxUjJ15p1V4\\/kOKnzTAdTWZR1YCmuT2qJIFJy\\/NAEuVboay7xcOa09ir90Yqnfr8oagDNpRS0d6okfGeK1LGTcu0msocGrlk2JQPXikM1KKKKAIrn\\/AFLZrDuXLyVs3hxbtz2rCbrQAgozRmloAlh6irsa5Gaow\\/fFacf3cUmNEDM+7aOBUltO7cEdKnWIHmpVjUdhQBC7ZAYVOhylRz9MUsR+WkMSZigqslxIzYwM+9XioYU3yl9BTERQyGTqDTL0fuatbQOlV70fuCaQGSetJSmkqyRantjiVagxUsH+sX60hm2ORS4pq\\/dFFAFPUs7AOSDWTIcuT61s3uMR5\\/vVkSriYigBgFBp3ao3oAlh\\/wBYtacVZkIIK1ownikxouJT6YlOfpQNlaRsv7VNF92qziQDAFSwOduCDmkBPSio135O4DFOHFMQ81Bd\\/wDHu\\/0qYmq95k27gdSKAMfPpSU2lNMkkFSRj5qjTtU8I\\/eigZrpyi\\/SlxTY\\/uD24p1AEF0Mqh64bNZV4u2fI6HmtK7nSNcHrWVPL5jZoAY1Rk80rGmGgCx56nGBjPb0q5CeBWTWhZyblxQxo04jxTiwpkBFJLCrjvUjHB0HU08OnrVIRFG71KIx\\/eNUOxZ8xPUUjEHvUYhzUojULgAUhaIM8VWvJRFFn8qsmsjUJfMm2j7q8UkJkEj+ZIXIxmm9aSnoKoQ7sKsw\\/wCuWq3erlmuZhQBor0\\/OnUmMAAdqMUAUr9VeIsTjbWSx5FXLzJQfewfWqTHmgBDTcUvUUCgBNualgJVqVcUhGORQBpQy8VZRsisuDJXOeasRuRSKNDApQoqsk3rU6yAigLEuKQnFRmYVBIzN7ClcVgvLgRREg\\/MelZHWn3DbpT6VHVCHBRT88UwU4DNADk5Oe1aVgvVs1m56jNXbKZVXaSc+ooA0qKiWQkcFW\\/HFLvb+6P++qAMmed3Uhgv5VSYVdZaqyoc0FtEeKUr603lTUhbcuMUEirSt0qLFWoLdinnMPlzQIfaoQOasGPuKekWORUyDNTcorqpqTYRU4XB6U7FAyFI\\/Wm3bbIjVjOBWbePvOO1CEUSeaAaVqZVEkvPtSk460xDT8g0AIPmPNW4AwG6PtVUsB0qVJ2C7e3tQM0ov3qBtgAp3lD+6Khiu1VACuPpT\\/tqehoCzKlMkXIp+KSqNio0ftTdtXSoNN2e5pWI5Cpsya04E3WmF5\\/CoBGo7VZtHI3Rde4PpSE42Gbyibl59qelwpGW4qEEoRxjFP3joEHPXNLlKsWlmQjO786UuP7wqqS+QABtoD9u9SJRJ5HXHWs+dl3ECrGQ4O9elMcRqCAMntmmgsUyKhYYOKtGNpHwozUJXa5D8H3qiCLB9KdhqkBAo3E0CI8EVJHShc9qsLA23cvzD2oKSBOFxTs0bWH8J\\/KjDf3T+VM0FoopKZQtFJS5oAKfbnZOCeh4plI3agTJrkfvcjuKjUHNWLlV8tXB7AVXBpCjsWMEscYI9aiONx54pwGenJPXFDlfbNTcVx+GLdOD6VBKAD1\\/OpdylNwIyO9RsB165oTBDIcrOuO9MvEzO\\/WpoCBcJnvTrrBm4GOKrqL7Rm+Wwp6+lWcCjaPSiw+UjUVPDKYunI9KWKPJycYqXywBlUpXQyKWXzDnJH4UzP8AtH8qsPCp6rgZ44pnkJ6fpSuieVEWaKSlqywooooAKWkpaBk9sPNhdM9DxULLtYqeoqbT+j\\/Wo5v+Ph6RC3EQhWyaHX97lu4xTWqSb76\\/WlIbGxFdmD92m0if6qloQ0PgwbhQaddACX5e9Mg\\/4+lp9x\\/rVpk\\/aIcUUtJTLJ1cFeOPxp579+2Krp92rA++f96s5ED8DGDtAB4zSbE9UpJen41FQSf\\/2SQAAAAAAAAAAAA=\"\n   }\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get a list of latest requests (search=latest)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "latest",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"total\":\"13128345\",\"men\":\"7112566\",\"women\":\"6062746\"}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Total data (search=count)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "count",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "TrackThis Mockup",
+                        "method": "get",
+                        "endpoint": "func.trackthis_web.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 400,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[{\"result_key\":\"{{ faker 'random.uuid' }}\",\"option\":\"name\",\"argument\":\"muhammad nafis bin mustafa\"}]\n",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get list of previous queries (actual result_key uses no dash (-) symbol)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "TrackThis Mockup",
+                        "method": "post",
+                        "endpoint": "func.trackthis_web.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\"q_id\":\"18709a6b682eca4ecb59b26bde6f1b6c\"}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Request person information (single)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "option",
+                                        "value": "ic|name|phone|email|address",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "argument",
+                                        "value": "*",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"q_id\":\"18709a6b682eca4ecb59b26bde6f1b6c\"}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Request person information (multi)",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "option",
+                                        "value": "combination",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "argument",
+                                        "value": "*",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "TrackThis Mockup: Get listing",
+                        "method": "get",
+                        "endpoint": "temp/:file",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "D:\\Downloads\\sample.txt",
+                                "sendFileAsBody": true,
+                                "rules": [
+                                    {
+                                        "target": "params",
+                                        "modifier": "file",
+                                        "value": "7326974_18709a6b682eca4ecb59b26bde6f1b6c.V2.txt",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Prepaid Verification Mockup",
+                        "method": "get",
+                        "endpoint": "func.prepaid_verification.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 400,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n   \"altel\":{\n      \"remaining\":\"0\",\n      \"total\":\"3182\"\n   },\n   \"celcom\":{\n      \"remaining\":\"210560\",\n      \"total\":\"287651\"\n   },\n   \"digi\":{\n      \"remaining\":\"384118\",\n      \"total\":\"414137\"\n   },\n   \"maxis\":{\n      \"remaining\":\"176121\",\n      \"total\":\"215361\"\n   },\n   \"merchantrade\":{\n      \"remaining\":\"0\",\n      \"total\":\"6514\"\n   },\n   \"red-one\":{\n      \"remaining\":\"0\",\n      \"total\":\"12460\"\n   },\n   \"redtone\":{\n      \"remaining\":\"0\",\n      \"total\":\"4\"\n   },\n   \"tunetalk\":{\n      \"remaining\":\"79618\",\n      \"total\":\"107770\"\n   },\n   \"umobile\":{\n      \"remaining\":\"613741\",\n      \"total\":\"624223\"\n   },\n   \"unifi\":{\n      \"remaining\":\"0\",\n      \"total\":\"0\"\n   },\n   \"webe\":{\n      \"remaining\":\"0\",\n      \"total\":\"2149\"\n   },\n   \"xox\":{\n      \"remaining\":\"0\",\n      \"total\":\"74\"\n   },\n   \"yes\":{\n      \"remaining\":\"0\",\n      \"total\":\"0\"\n   },\n   \"ytl\":{\n      \"remaining\":\"0\",\n      \"total\":\"9591\"\n   }\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=remaining",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "remaining",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"batchno\":[\"Q42019\",\"Q12020\",\"Q12021\",\"Q32020\"]}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=list_batchno",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list_batchno",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"telco\":[\"umobile\",\"merchantrade\",\"tunetalk\",\"yes\",\"maxis\",\"redtone\",\"ytl\",\"webe\",\"xox\",\"digi\",\"celcom\",\"Unifi\",\"red-one\",\"altel\"]}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=list_telco",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list_telco",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"{{ queryParam 'telco' }}\":[\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"1\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"6319\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"NON-CITIZEN\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"50\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"TEMPORARY RESIDENT\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"26\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"4\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"485\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"247\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"107096\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      }\r\n   ]\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "batchno&telco",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"filename\":\"temp\\/prepaid\\/result-xox-Q12020-6200bb57e3e0b57ebca95c981999f6fb-jpn_record-Dead.txt\",\r\n   \"link\":\"https:\\/\\/192.168.93.26\\/iosapps_GOGI986578HGGFFYHUHCDRHJ\\/temp\\/prepaid\\/result-{{queryParam 'telco'}}-{{queryParam 'batchno'}}-6200bb57e3e0b57ebca95c981999f6fb-{{queryParam 'field'}}-{{queryParam 'category'}}.txt\"\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=rawdata&batchno&telco&field&category",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "rawdata",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "field",
+                                        "value": "jpn_record",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "category",
+                                        "value": "Dead",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"msg\":\"Completed processing {{ queryParam 'telco' }}\",\r\n   \"info\":\"File is ready for download\",\r\n   \"filename\":\"temp\\/prepaid\\/result-{{ queryParam 'telco' }}-{{ queryParam 'batchno' }}-6200bb57e3e0b57ebca95c981999f6fb.txt\",\r\n   \"link\":\"https:\\/\\/192.168.93.26\\/iosapps_GOGI986578HGGFFYHUHCDRHJ\\/temp\\/prepaid\\/result-{{ queryParam 'telco' }}-{{ queryParam 'batchno' }}-6200bb57e3e0b57ebca95c981999f6fb.txt\"\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=rawdata&telco&batchno",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "rawdata",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "func.prepaid.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": true\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "body",
+                                        "modifier": "filename",
+                                        "value": "*",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "FBStalker Mockup",
+                        "method": "get",
+                        "endpoint": "func.fbstalker.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "null",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Failed",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"total\":\"{{ oneOf (array 3571 3577 3690) }}\"}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "search=stalker_data&option=total",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "stalker_data",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "option",
+                                        "value": "total",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"total\":\"{{ oneOf (array 3571 3577 3690) }}\",\r\n   \"0\":{\r\n      \"userid\":\"199843990194126\",\r\n      \"username\":\"suararakyatpage\",\r\n      \"nickname\":\"Suara Rakyat\",\r\n      \"url\":\"https:\\/\\/www.facebook.com\\/suararakyatpage\",\r\n      \"last_update\":\"2021-02-25 10:39:39\",\r\n      \"home_folder\":\"\\/data\\/fbstalker\\/s\\/u\\/fb.suararakyatpage\"\r\n   },\r\n   \"1\":{\r\n      \"userid\":\"169924826953\",\r\n      \"username\":\"mygosip\",\r\n      \"nickname\":\"MyGosip.my\",\r\n      \"url\":\"https:\\/\\/www.facebook.com\\/mygosip\",\r\n      \"last_update\":\"2021-02-25 09:32:18\",\r\n      \"home_folder\":\"\\/data\\/fbstalker\\/m\\/y\\/fb.mygosip\"\r\n   },\r\n   \"2\":{\r\n      \"userid\":\"1217075272\",\r\n      \"username\":\"najimy\",\r\n      \"nickname\":\"Max Najimy\",\r\n      \"url\":\"https:\\/\\/www.facebook.com\\/najimy\",\r\n      \"last_update\":\"2021-02-24 11:24:46\",\r\n      \"home_folder\":\"\\/data\\/fbstalker\\/n\\/a\\/fb.najimy\"\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get list of existing records",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "search",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "keyword",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "page",
+                                        "value": "\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "FBStalker Mockup",
+                        "method": "get",
+                        "endpoint": "func.fbstalker_single.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "Nothing passed",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\r\n   {\r\n      \"userid\":\"199843990194126\",\r\n      \"username\":\"suararakyatpage\",\r\n      \"nickname\":\"Suara Rakyat\",\r\n      \"url\":\"https:\\/\\/www.facebook.com\\/suararakyatpage\",\r\n      \"last_update\":\"2021-02-25 10:39:39\",\r\n      \"home_folder\":\"\\/data\\/fbstalker\\/s\\/u\\/fb.suararakyatpage\",\r\n      \"profile_photos\":[\r\n         {\r\n            \"fbfile_jpg\":\"profile_photo.jpg\"\r\n         },\r\n         {\r\n            \"fbfile_jpg\":\"profile_photo1.jpg\"\r\n         },\r\n         {\r\n            \"fbfile_jpg\":\"profile_photo2.jpg\"\r\n         }\r\n      ]\r\n   }\r\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get profile photos",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "u",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "g",
+                                        "value": "profile_photos",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "Any\nRequested: {{ queryParam 'g' }}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get specific fb pages",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "u",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "g",
+                                        "value": "photosby|storiesby|friendsof|videosby|photosof|photoscommented|photosliked|storiescommented|storiestagged|videosof|videoscommented",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "Any",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Screenshot list of existing fb/url",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "u",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "FDRS Mockup",
+                        "method": "get",
+                        "endpoint": "func.dashboard.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"ok\": false\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"total\":\"10673771\",\r\n   \"0\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/7\\/1\\/1\\/1_711009085073.jpg\",\r\n      \"nickname\":\"TUN FAISAL ISMAIL BIN AZIZ\",\r\n      \"identity\":\"711009085073\"\r\n   },\r\n   \"1\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/2\\/0\\/920621145045.jpg\",\r\n      \"nickname\":\"MUHAMMAD AZHAR BIN ABDULLAH\",\r\n      \"identity\":\"920621145045\"\r\n   },\r\n   \"2\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/9\\/1\\/1_991001145851.jpg\",\r\n      \"nickname\":\"MUHAMMAD NURAIMAN BIN ABDUL SHUKOR\",\r\n      \"identity\":\"991001145851\"\r\n   },\r\n   \"3\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/9\\/0\\/990815145880.jpg\",\r\n      \"nickname\":\"ANIS NABIHA BINTI AZHAR\",\r\n      \"identity\":\"990815145880\"\r\n   },\r\n   \"4\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/8\\/3\\/0\\/1_830108055568.jpg\",\r\n      \"nickname\":\"NUR A`MINAHTUL MARDIAH BINTI MD.NOR\",\r\n      \"identity\":\"830108055568\"\r\n   },\r\n   \"5\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/1\\/0\\/910225035048.jpg\",\r\n      \"nickname\":\"NURLIYANA HUSNA BINTI AZMI\",\r\n      \"identity\":\"910225035048\"\r\n   },\r\n   \"6\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/7\\/3\\/0\\/730407125185.jpg\",\r\n      \"nickname\":\"JEFFNI BIN NAWAWI\",\r\n      \"identity\":\"730407125185\"\r\n   },\r\n   \"7\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/0\\/0\\/900621145119.jpg\",\r\n      \"nickname\":\"MUHAMMAD NAFIS BIN MOHAMAD\",\r\n      \"identity\":\"900621145119\"\r\n   },\r\n   \"8\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/9\\/1\\/1\\/911229105052.jpg\",\r\n      \"nickname\":\"NORAMALINA BINTI MD JAMIL\",\r\n      \"identity\":\"911229105052\"\r\n   },\r\n   \"9\":{\r\n      \"filename\":\"\\/data\\/temp_face_id\\/7\\/4\\/1\\/741104017156.jpg\",\r\n      \"nickname\":\"NORLIN BINTI AWANG\",\r\n      \"identity\":\"741104017156\"\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Request latest face recognition data",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "face_data",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 13,
+                "name": "FBStalker Crawler",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3001,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "FBStalker Mockup: To start crawling one account",
+                        "method": "get",
+                        "endpoint": "fbs2/api_fbstalker.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "OK",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "u",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "r",
+                                        "value": "*",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "c",
+                                        "value": "chat",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "i",
+                                        "value": "*",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "FBStalker Mockup: To request image snapshot of page (Item #33)",
+                        "method": "get",
+                        "endpoint": "fbstalker/s/u/:u/images/prsMainPage.jpg",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 500,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "D:\\Users\\steel\\Desktop\\Lowyat FB screenshot.jpg",
+                                "sendFileAsBody": true,
+                                "rules": [
+                                    {
+                                        "target": "params",
+                                        "modifier": "u",
+                                        "value": "fb.*",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
