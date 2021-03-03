@@ -1,13 +1,11 @@
 info: 
   title: CRUD-API
-  description: CRUD API for MariaDB database
   version: 1.0.0
 openapi: 3.0.0
 servers:
   - url: 'http://crud-api'
-    description: Main CRUD server
 paths:
-  /records/{table}:
+  /table/records/{table}:
     get:
       summary: Fetch records from table
       description: Fetch records from table, based on given table name
@@ -82,7 +80,7 @@ paths:
             minimum: 2
       requestBody:
         $ref: '#/components/requestBodies/create-record'
-  /records/{table}/{id}:
+  /table/records/{table}/{id}:
     get:
       summary: Fetch a record
       description: Fetch a record from table, based on given table name and record ID
@@ -162,6 +160,28 @@ paths:
           schema:
             type: string
             minimum: 1
+  /procedure/{storedproc}:
+    post:
+      description: Fetch results from MySQL stored procedure
+      summary: Fetch result from stored procedure, given the procedure name in the path
+      parameters:
+        - in: path
+          name: storedproc
+          required:  true
+          description:  Name of stored procedure
+          schema:
+            type:  string
+      responses:
+        '200':
+          description: Stored procedure requested successfully
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: string
+              
+        
 components:
   schemas:
     create-record:

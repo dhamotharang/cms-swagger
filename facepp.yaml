@@ -1,0 +1,190 @@
+openapi: 3.0.0
+
+info: 
+  title: FacePlusPlus
+  description: FacePlusPlus FaceCompare API
+
+  version: 1.0.0
+  contact:
+    name: R&D
+    email: rdoffice@zen.com.my
+
+servers:
+  - url: https://api-us.faceplusplus.com/facepp/v3
+    description: |
+      FacePlusPlus API server
+
+tags:
+  - name: FaceCompare
+    description: |
+      ### Image Requirements
+      - Format : JPG (JPEG), PNG
+      - Size : between 48*48 and 4096*4096 (pixels)
+      - File size : no larger than 2MB
+      - Minimal size of face : the bounding box of a detected face is a square. The minimal side length of a square should be no less than 150 pixels.
+  
+
+paths:
+  /compare:
+    post:
+      tags:
+        - "FaceCompare"
+      description: Compare two faces
+      summary: |
+        Compare two faces and decide whether they are from the same person. You can upload image file or use face_token for face comparing. For image upload, the biggest face by the size of bounding box within the image will be used. For face_token, you shall get it by using Detect API.
+      parameters:
+        - in: query
+          name: face_token1
+          description: The id of the first face.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: image_url1
+          description: URL of the first image.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: image_base64_1
+          description: |
+            Base64 encoded binary data of the first image.
+            These three parameters (image_url1, image_file1 and image_base64_1) will be adopted in the following order of precedence:
+            Highest: image_file1; Lowest: image_url1.
+          required: false
+          schema:
+            type: string
+            format: base64
+
+        - in: query
+          name: face_token2
+          description: The id of the second face.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: image_url2
+          description: URL of the second image.
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: image_base64_2
+          description: |
+            Base64 encoded binary data of the second image.
+            These three parameters (image_url2, image_file2 and image_base64_2) will be adopted in the following order of precedence:
+            Highest: image_file2; Lowest: image_url2.
+          required: false
+          schema:
+            type: string
+            format: base64
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image_file1:
+                  type: string
+                  format: binary
+                image_file2:
+                  type: string
+                  format: binary
+            encoding:
+              image_file1:
+                contentType: image/png, image/jpeg
+              image_file2:
+                contentType: image/png, image/jpeg
+      responses:
+        200:
+          description: Successful response
+          content: 
+            application/json:
+              schema:
+                $ref:  "#/components/schemas/FaceResponse"
+components:
+  schemas:
+    FaceResponse:
+      type: object
+      required:
+        - "request_id"
+        - "time_used"
+        - "error_message"
+      properties:
+        request_id:
+          type: string
+          description: Unique id of each request
+        time_used:
+          type: integer
+          description: "Time that the whole request takes. Unit: millisecond"
+        error_message:
+          type: string
+          description: "This string will not be returned unless request fails. For more details, please see the following section on error message."
+        confidence:
+          type: number
+          description: |
+            Indicates the similarity of two faces, a floating-point number with 3 decimal places between [0,100]. Higher confidence indicates higher possibility that two faces belong to same person.
+            Note: if no face is detected within the image uploaded, this string will not be returned.
+        thresholds:
+          type: object
+          description: |
+            A set of thresholds including 3 floating-point numbers with 3 decimal places between [0,100].
+            If the confidence does not meet the "1e-3" threshold, it is highly suggested that the two faces are not from the same person. While if the confidence is beyond the "1e-5" threshold, there's high possibility that they are from the same person.
+            1e-3: confidence threshold at the 0.1% error rate;
+            1e-4: confidence threshold at the 0.01% error rate;
+            1e-5: confidence threshold at the 0.001% error rate;
+            Note: seeing that thresholds are not static, there's no need to store values of thresholds in a persistent form, especially not to compare the confidence with a previously returned threshold.
+            If no face is detected within the image uploaded, this string will not be returned.
+        image_id1:
+          type: string
+          description: |
+            Unique id of an image uploaded by image_url1, image_file1 or image_base64_1.
+            Note: if none of image_url1, image_file1 or image_base64_1 is used, this string will not be returned. 
+        image_id2:
+          type: string
+          description: |
+            Unique id of an image uploaded by image_url2, image_file2 or image_base64_2.
+            Note: if none of image_url2, image_file2 or image_base64_2 is used, this string will not be returned.
+        faces1:
+          type: array
+          description: |
+            Array of detected faces within the image uploaded by image_url1, image_file1 or image_base64_1. The first face in this array will be used for face comparing.
+            Note: if none of image_url1, image_file1 or image_base64_1 is used, this array will not be returned. If no face is detected, the array is [].
+          items: 
+            $ref: "#/components/schemas/Faces"
+        faces2:
+          type: array
+          description: |
+            	Array of detected faces within the image uploaded by image_url2, image_file2 or image_base64_2. The first face in this array will be used for face comparing.
+              Note: if none of image_url2, image_file2 or image_base64_2 is used, this array will not be returned. If no face is detected, the array is [].
+          items: 
+            $ref: "#/components/schemas/Faces"
+    Faces:
+      type: object
+      properties:
+        face_token:
+          type: string
+          description: Unique id of the detected face.
+        face_rectangle:
+          type: object
+          items: 
+            $ref: "#/components/schemas/face_rectangle"
+    face_rectangle:
+      type: object
+      description: A rectangle area for the face location on image.
+      properties:
+        top:
+          type: integer
+          description: Y-coordinate of upper left corner
+        left:
+          type: integer
+          description: X-coordinate of upper left corner
+        width:
+          type: integer
+          description: The width of the rectangle frame
+        height:
+          type: integer
+          description: The height of the rectangle frame
+
+
