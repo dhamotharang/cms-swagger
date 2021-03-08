@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "d7bd5fa2-e3fe-4283-9fb6-c3320e45680b",
+		"name": "FacePlusPlus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Compare (DF)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Compare (Direct)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "7c174ae2f835c0b7fd9e63f65358cdb6958cd4b9a705d652e220b30f007fdb14",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-DreamFactory-API-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_SERVER",
+			"value": "10.5.5.27"
+		},
+		{
+			"key": "API_PORT",
+			"value": "8081"
+		}
+	]
+}

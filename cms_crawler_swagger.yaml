@@ -1,0 +1,410 @@
+openapi: 3.0.0
+info:
+  title: CMS Integration
+  version: 1.0.0
+servers:
+  - url: 'http://cms_crawler:3011/iosapps_GOGI986578HGGFFYHUHCDRHJ'
+paths:
+  /func.telegram_sendmsg.php:
+    get:
+      description: 'Telegram Mockup: Send any text message to any registered user'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+      parameters:
+        - in: query
+          name: chatid
+          description: Telegram ID
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: msg
+          description: Chat message
+          required: true
+          schema:
+            type: string
+    post:
+      description: 'Telegram Mockup: Send any text message to any registered user'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+      parameters:
+        - in: query
+          name: chatid
+          description: Telegram ID
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: msg
+          description: Chat message
+          required: true
+          schema:
+            type: string
+  /func.mntl.php:
+    get:
+      description: MNTL Mockup
+      parameters:
+        - in: query
+          name: search
+          description: Search parameter
+          required: true
+          schema:
+            type: string
+            enum:
+              - auto
+              - list_count
+              - list
+              - list_years
+        - in: query
+          name: value
+          description: "Search query value (e.g: CMS12345)"
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: max
+          description: "Maximum number of records per page (e.g: 10, 20, 30, 40, 50)"
+          required: false
+          schema:
+            type: integer
+        - in: query
+          name: page
+          description: "Result page (e.g: 1, 2, 3, ..)"
+          required: false
+          schema:
+            type: integer
+        - in: query
+          name: year
+          description: "Query year (e.g: 2019, 2020, 2021, ..)"
+          required: false
+          schema:
+            type: integer
+        - in: query
+          name: order
+          description: Result sorting
+          required: false
+          schema:
+            type: string
+            enum:
+              - ASC
+              - DESC
+            default: ASC
+      responses:
+        '200':
+          description: list_years
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+        '400':
+          description: Parameter not supplied
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.telco.php:
+    get:
+      description: 'MNTL Mockup: MNP Search'
+      parameters:
+        - in: query
+          name: search
+          description: "Search parameter (i.e: Phone number, inclusive of country code. e.g: 60123456789)"
+          required: true
+          schema:
+            type: integer
+            default: 60123456789
+        - in: query
+          name: mnp
+          description: Choose whether to look for MNP result or not.
+          required: true
+          schema:
+            type: string
+            default: mnp
+            enum:
+              - mnp
+              - nomnp
+      responses:
+        '200':
+          description: mnp
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.jpn.php:
+    get:
+      description: 'JPN Mockup:  Get and list details (Photo in uuencode/uudecode)'
+      parameters:
+        - in: query
+          name: search
+          description: JPN search parameter
+          required: true
+          schema:
+            type: string
+            enum:
+              - ic
+              - latest
+              - count
+        - in: query
+          name: ic
+          description: MyKad/Body number of the searched person, without dash (-) sign.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Total data (search=count)
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.trackthis_web.php:
+    get:
+      description: TrackThis Mockup
+      parameters:
+        - in: query
+          name: search
+          description: Search parameter
+          required: true
+          schema:
+            type: string
+            enum: 
+              - list
+            default: list
+        - in: query
+          name: webid
+          description: "User's CMS ID"
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: tgid
+          description: "User's Telegram ID"
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Get list of previous queries (actual result_key uses no dash (-) symbol)
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+        '400':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+    post:
+      description: TrackThis Mockup
+      parameters:
+        - in: query
+          name: option
+          description: Tracking data option
+          required: true
+          schema:
+            type: string
+            enum:
+              - ic
+              - name
+              - phone
+              - email
+              - address
+              - combination
+        - in: query
+          name: argument
+          description: |
+            Argument for selected data option. If data option is selected as *combination*,
+            argument can be submitted as this:
+            ic \<ic\>,name \<name\>,phone \<phone\>,email \<email\>,address <address>
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Request person information (multi)
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  '/temp/{file}':
+    get:
+      description: 'TrackThis Mockup: Get listing'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+      parameters:
+        - name: file
+          in: path
+          schema:
+            type: string
+          required: true
+  /func.prepaid_verification.php:
+    get:
+      description: Prepaid Verification Mockup
+      parameters:
+        - in: query
+          name: search
+          description: Prepaid search option
+          required: false
+          schema:
+            type: string
+            enum:
+              - remaining
+              - list_batchno
+              - list_telco
+              - rawdata
+        - in: query
+          name: batchno
+          description: Batch number (Qxxyyyy), where xx=month, yyyy=year
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: telco
+          description: "Query for specific telco (e.g: xox, celcom, digi, maxis)"
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: field
+          description: "Search by specific field type (e.g: jpn_record)"
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: category
+          description: Category of record, based on selected field type.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search=rawdata&telco&batchno
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+        '400':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.prepaid.php:
+    post:
+      description: 'Upload file for new verification'
+      parameters:
+        - in: query
+          name: batchno
+          description: Batch number
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: telco
+          description: "Telco name (e.g: xox, celcom, maxis, digi)"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.fbstalker.php:
+    get:
+      description: FBStalker Mockup
+      responses:
+        '200':
+          description: Get list of existing records
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.fbstalker_single.php:
+    get:
+      description: FBStalker Mockup
+      responses:
+        '200':
+          description: Screenshot list of existing fb/url
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
+  /func.dashboard.php:
+    get:
+      description: FDRS Mockup
+      responses:
+        '200':
+          description: Request latest face recognition data
+          content:
+            application/json: {}
+          headers:
+            '':
+              schema:
+                type: string
+              example: ''
