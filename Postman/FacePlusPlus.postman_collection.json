@@ -12,7 +12,90 @@
 				"header": [],
 				"url": null
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Compare",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_file1",
+									"description": "First image file to compare",
+									"type": "file",
+									"src": "/Users/steelburn/Desktop/WhatsApp Image 2021-01-06 at 2.32.54 PM (1).jpeg"
+								},
+								{
+									"key": "image_file2",
+									"description": "Second image file to compare",
+									"type": "file",
+									"src": "/Users/steelburn/Desktop/WhatsApp Image 2021-01-06 at 2.32.54 PM.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_SERVER}}:{{API_PORT}}/api/v2/facepp/compare",
+							"host": [
+								"{{API_SERVER}}"
+							],
+							"port": "{{API_PORT}}",
+							"path": [
+								"api",
+								"v2",
+								"facepp",
+								"compare"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 08 Mar 2021 03:22:54 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.46 (Unix) OpenSSL/1.1.1d PHP/7.3.27"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.27"
+						},
+						{
+							"key": "Content-Length",
+							"value": "487"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"faces1\": [\n        {\n            \"face_rectangle\": {\n                \"width\": 247,\n                \"top\": 247,\n                \"left\": 339,\n                \"height\": 247\n            },\n            \"face_token\": \"0a508c6c249ebad8ed71fd2311d537ac\"\n        }\n    ],\n    \"faces2\": [\n        {\n            \"face_rectangle\": {\n                \"width\": 162,\n                \"top\": 396,\n                \"left\": 369,\n                \"height\": 162\n            },\n            \"face_token\": \"b1d7c27aab06b36bc1a11a2f2c29e46c\"\n        }\n    ],\n    \"time_used\": 451,\n    \"thresholds\": {\n        \"1e-3\": 62.327,\n        \"1e-5\": 73.975,\n        \"1e-4\": 69.101\n    },\n    \"confidence\": 85.486,\n    \"image_id2\": \"3EwGMQgcNwp2DKCEOsMMcA==\",\n    \"image_id1\": \"0FQNXX0q60SivCjVIxnXCQ==\",\n    \"request_id\": \"1615173777,15b29c4b-f0ee-4cc3-ad96-891ef8475fdc\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Compare (Direct)",
@@ -21,7 +104,81 @@
 				"header": [],
 				"url": null
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Compare",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_file1",
+									"type": "file",
+									"src": "/Users/steelburn/Desktop/WhatsApp Image 2021-01-06 at 2.32.54 PM (1).jpeg"
+								},
+								{
+									"key": "image_file2",
+									"type": "file",
+									"src": "/Users/steelburn/Desktop/WhatsApp Image 2021-01-06 at 2.32.54 PM.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api-us.faceplusplus.com/facepp/v3/compare?api_key=7cMJqVSoR4UDVS3rGfnLCPJywHig8gkR&api_secret=9yUDPoppd6uSIa7pz8gFIoD-fzLo98p0",
+							"protocol": "https",
+							"host": [
+								"api-us",
+								"faceplusplus",
+								"com"
+							],
+							"path": [
+								"facepp",
+								"v3",
+								"compare"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "7cMJqVSoR4UDVS3rGfnLCPJywHig8gkR"
+								},
+								{
+									"key": "api_secret",
+									"value": "9yUDPoppd6uSIa7pz8gFIoD-fzLo98p0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 08 Mar 2021 03:22:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "527"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.13.3"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"faces1\": [\n        {\n            \"face_rectangle\": {\n                \"width\": 247,\n                \"top\": 247,\n                \"left\": 339,\n                \"height\": 247\n            },\n            \"face_token\": \"b382ceeddc02c9af72cba555b917d5d7\"\n        }\n    ],\n    \"faces2\": [\n        {\n            \"face_rectangle\": {\n                \"width\": 162,\n                \"top\": 396,\n                \"left\": 369,\n                \"height\": 162\n            },\n            \"face_token\": \"1aa11a19a5b7bdea5b79fecf4bbd892c\"\n        }\n    ],\n    \"time_used\": 539,\n    \"thresholds\": {\n        \"1e-3\": 62.327,\n        \"1e-5\": 73.975,\n        \"1e-4\": 69.101\n    },\n    \"confidence\": 85.486,\n    \"image_id2\": \"3EwGMQgcNwp2DKCEOsMMcA==\",\n    \"image_id1\": \"0FQNXX0q60SivCjVIxnXCQ==\",\n    \"request_id\": \"1615173737,8f191b28-bd1e-45dd-bb5a-c26cb5e39000\"\n}"
+				}
+			]
 		}
 	],
 	"auth": {
