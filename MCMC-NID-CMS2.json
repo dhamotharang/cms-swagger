@@ -234,7 +234,7 @@
                 "name": "CMS Integration",
                 "endpointPrefix": "iosapps_GOGI986578HGGFFYHUHCDRHJ",
                 "latency": 0,
-                "port": 3000,
+                "port": 3011,
                 "routes": [
                     {
                         "uuid": "",
@@ -247,7 +247,7 @@
                                 "body": "{\n  \"ok\": false\n}",
                                 "latency": 0,
                                 "statusCode": 200,
-                                "label": "",
+                                "label": "Default (no parameter)",
                                 "headers": [
                                     {
                                         "key": "",
@@ -265,7 +265,7 @@
                                 "body": "{\n  \"ok\":true,\n  \"result\":{\n    \"message_id\":322791,\n    \"from\":{\"id\":844036863,\n    \"is_bot\":true,\n    \"first_name\":\"Optimus\",\n    \"username\":\"nied_bot\"\n    },\n    \"chat\":{\n      \"id\":7326974,\n      \"first_name\":\"Anuar\",\n      \"username\":\"hairulanuar\",\n      \"type\":\"private\"\n    },\n      \"date\": 1614219858,\n  \"text\":\"{{ queryParam 'msg' }}\"\n  \n}\n}",
                                 "latency": 0,
                                 "statusCode": 200,
-                                "label": "",
+                                "label": "Send message",
                                 "headers": [
                                     {
                                         "key": "",
@@ -725,7 +725,26 @@
                                 ],
                                 "filePath": "",
                                 "sendFileAsBody": false,
-                                "rules": [],
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "tgid",
+                                        "value": "\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "webid",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list",
+                                        "isRegex": false
+                                    }
+                                ],
                                 "rulesOperator": "OR",
                                 "disableTemplating": false
                             }
@@ -763,7 +782,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "argument",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     }
                                 ],
@@ -794,7 +813,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "argument",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     }
                                 ],
@@ -1006,7 +1025,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "telco",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
@@ -1049,7 +1068,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "telco",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
@@ -1096,13 +1115,13 @@
                                     {
                                         "target": "query",
                                         "modifier": "telco",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
                                         "target": "body",
                                         "modifier": "filename",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     }
                                 ],
@@ -1192,7 +1211,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "keyword",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
@@ -1410,7 +1429,7 @@
                 "name": "FBStalker Crawler",
                 "endpointPrefix": "",
                 "latency": 0,
-                "port": 3001,
+                "port": 3012,
                 "routes": [
                     {
                         "uuid": "",
@@ -1436,13 +1455,13 @@
                                     {
                                         "target": "query",
                                         "modifier": "u",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
                                         "target": "query",
                                         "modifier": "r",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     },
                                     {
@@ -1454,7 +1473,7 @@
                                     {
                                         "target": "query",
                                         "modifier": "i",
-                                        "value": "*",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     }
                                 ],
@@ -1473,7 +1492,7 @@
                         "responses": [
                             {
                                 "uuid": "",
-                                "body": "{}",
+                                "body": "{}fb",
                                 "latency": 0,
                                 "statusCode": 500,
                                 "label": "",
@@ -1551,7 +1570,7 @@
                 "name": "FDRS",
                 "endpointPrefix": "proxy_admin",
                 "latency": 0,
-                "port": 3002,
+                "port": 3013,
                 "routes": [
                     {
                         "uuid": "",
