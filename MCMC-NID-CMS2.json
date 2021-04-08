@@ -2456,6 +2456,24 @@
                                 ],
                                 "rulesOperator": "AND",
                                 "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\"status\":\"ok\"}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "No parameter",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
                             }
                         ],
                         "enabled": true,
