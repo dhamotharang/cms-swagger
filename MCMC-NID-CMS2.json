@@ -1169,37 +1169,6 @@
                             },
                             {
                                 "uuid": "",
-                                "body": "{\r\n   \"{{ queryParam 'telco' }}\":[\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"1\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"6319\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"NON-CITIZEN\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"50\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"TEMPORARY RESIDENT\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"26\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"4\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"485\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"247\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"107096\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      }\r\n   ]\r\n}",
-                                "latency": 0,
-                                "statusCode": 200,
-                                "label": "batchno&telco",
-                                "headers": [
-                                    {
-                                        "key": "",
-                                        "value": ""
-                                    }
-                                ],
-                                "filePath": "",
-                                "sendFileAsBody": false,
-                                "rules": [
-                                    {
-                                        "target": "query",
-                                        "modifier": "batchno",
-                                        "value": "Q\\d",
-                                        "isRegex": true
-                                    },
-                                    {
-                                        "target": "query",
-                                        "modifier": "telco",
-                                        "value": "(.*)",
-                                        "isRegex": true
-                                    }
-                                ],
-                                "rulesOperator": "AND",
-                                "disableTemplating": false
-                            },
-                            {
-                                "uuid": "",
                                 "body": "{\r\n   \"filename\":\"temp\\/prepaid\\/result-xox-Q12020-6200bb57e3e0b57ebca95c981999f6fb-jpn_record-Dead.txt\",\r\n   \"link\":\"https:\\/\\/192.168.93.26\\/iosapps_GOGI986578HGGFFYHUHCDRHJ\\/temp\\/prepaid\\/result-{{queryParam 'telco'}}-{{queryParam 'batchno'}}-6200bb57e3e0b57ebca95c981999f6fb-{{queryParam 'field'}}-{{queryParam 'category'}}.txt\"\r\n}",
                                 "latency": 0,
                                 "statusCode": 200,
@@ -1278,6 +1247,37 @@
                                         "target": "query",
                                         "modifier": "batchno",
                                         "value": "Q\\d",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"{{ queryParam 'telco' }}\":[\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"1\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"6319\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"NON-CITIZEN\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"50\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"TEMPORARY RESIDENT\",\r\n         \"jpn_record\":\"\",\r\n         \"total\":\"26\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"4\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"PERMANENT RESIDENT\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"485\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"PASSED AWAY\",\r\n         \"total\":\"247\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      },\r\n      {\r\n         \"jpn_residential\":\"CITIZEN\",\r\n         \"jpn_record\":\"ACTIVE\",\r\n         \"total\":\"107096\",\r\n         \"batchno\":\"{{ queryParam 'batchno'}}\"\r\n      }\r\n   ]\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "batchno&telco",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "batchno",
+                                        "value": "Q\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "(.*)",
                                         "isRegex": true
                                     }
                                 ],
