@@ -1801,6 +1801,53 @@
                         ],
                         "enabled": true,
                         "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "func.mntl.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"telco\":\"Maxis\",\n  \"telco_address\":\"Menara Telekom Subang Jaya\",\n  \"subscriber_id\":\"890123038915\",\n  \"address\":\"No 3, Jalan Anggerik 2, Taman anggerik, 56213, Rawang, Selangor\",\n  \"account_type\":\"postpaid\",\n  \"email\":\"khairul.kamil@gmail.com\"\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "case_no",
+                                        "value": "(.*)",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "phone_no",
+                                        "value": "(.*)",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "police_report",
+                                        "value": "(.*)",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
                     }
                 ],
                 "proxyMode": false,
@@ -2516,6 +2563,185 @@
                                 "sendFileAsBody": false,
                                 "rules": [],
                                 "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 13,
+                "name": "SMCS",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3015,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "func.smcs.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\":\"ok\"\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Send request to smcs",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "url",
+                                        "value": "http\\d",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "case_id",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"status\":\"unsuccessful\"\n}",
+                                "latency": 0,
+                                "statusCode": 400,
+                                "label": "Invalid http",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "url",
+                                        "value": "a",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "case_id",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "func.smcs.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n  \"total_count\":431,\n  \"current_update\":55,\n  \"total_monitor\":90\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "get total count",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "social_media_type",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "type",
+                                        "value": "total",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\n  {\"url\":\"https://www.facebook.com/ejlivestream\"},\n  {\"url\":\"https://www.facebook.com/yuslainiazmi\"},\n  {\"url\":\"https://www.facebook.com/yus.jahutpahang\"},\n  {\"url\":\"https://www.facebook.com/yokechai.chan\"},\n  {\"url\":\"https://www.facebook.com/rotan.abah\"},\n  {\"url\":\"https://www.facebook.com/James5220\"},\n  {\"url\":\"https://www.facebook.com/supian.melon\"},\n  {\"url\":\"https://www.facebook.com/fitrieza.straightway\"},\n  {\"url\":\"https://www.facebook.com/nur.farzianah.56\"},\n  {\"url\":\"https://www.facebook.com/Gee-Boutique-422212544993046\"},\n  {\"url\":\"https://www.facebook.com/GeeBoutiques\"},\n  {\"url\":\"https://www.facebook.com/Geey96\"},\n  {\"url\":\"https://www.facebook.com/UnitedMalaysianHinduVoice\"},\n  {\"url\":\"https://www.facebook.com/mr.gadget1100\"},\n  {\"url\":\"https://www.facebook.com/profile.php?id=100025330985293\"},\n  {\"url\":\"https://www.facebook.com/nafira.dimaro\"},\n  {\"url\":\"https://www.facebook.com/ismail.putra2021\"},\n  {\"url\":\"https://www.facebook.com/norikhsan.tamin.1\"},\n  {\"url\":\"https://www.facebook.com/judy.wong.3511041\"},\n  {\"url\":\"https://www.facebook.com/AlexWong088\"},\n  {\"url\":\"https://www.facebook.com/muhamad.najib.1614\"},\n  {\"url\":\"https://www.facebook.com/wongsheauting.s\"},\n  {\"url\":\"https://www.facebook.com/belnawhen\"},\n  {\"url\":\"https://www.facebook.com/azifar.dimarco\"},\n  {\"url\":\"https://www.facebook.com/YBViral\"},\n  {\"url\":\"https://www.facebook.com/prajiv.proctor\"},\n  {\"url\":\"https://www.facebook.com/emily.valora.1\"},\n  {\"url\":\"https://www.facebook.com/ahmad.mumun.16\"},\n  {\"url\":\"https://www.facebook.com/tok.cindai.3\"},\n  {\"url\":\"https://www.facebook.com/erick.jen.779\"}\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Get list of URL",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "social_media_type",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "type",
+                                        "value": "list",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "AND",
                                 "disableTemplating": false
                             }
                         ],
