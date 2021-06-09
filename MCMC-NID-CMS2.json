@@ -1857,7 +1857,7 @@
                         "responses": [
                             {
                                 "uuid": "",
-                                "body": "0fc8de07d8cb2d3253f2d61732e8ee25z",
+                                "body": "\"0fc8de07d8cb2d3253f2d61732e8ee25z\"",
                                 "latency": 0,
                                 "statusCode": 200,
                                 "label": "",
@@ -1873,8 +1873,8 @@
                                     {
                                         "target": "query",
                                         "modifier": "search",
-                                        "value": "get_webid_bytgid",
-                                        "isRegex": false
+                                        "value": "(.*)",
+                                        "isRegex": true
                                     },
                                     {
                                         "target": "query",
