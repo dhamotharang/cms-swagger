@@ -1848,6 +1848,106 @@
                         ],
                         "enabled": true,
                         "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Get Webid",
+                        "method": "get",
+                        "endpoint": "func.verify_session.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "0fc8de07d8cb2d3253f2d61732e8ee25z",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "get_webid_bytgid",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "tgid",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "phone",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "email",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "Get Chatid",
+                        "method": "get",
+                        "endpoint": "func.verify_chatid.php",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "7326974",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "getchatid",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "fullname",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "webid",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
                     }
                 ],
                 "proxyMode": false,
