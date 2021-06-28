@@ -2843,6 +2843,524 @@
                                 ],
                                 "rulesOperator": "AND",
                                 "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"title\": \"Twitter\",\r\n    \"account\": 469331,\r\n    \"update\": 0,\r\n    \"monitor\": 54\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "get by category",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "category",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/category/count",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"title\": \"Twitter\",\r\n    \"account\": 469331,\r\n    \"update\": 0,\r\n    \"monitor\": 54\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "category",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/category/url",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"id\": 2822,\r\n            \"account\": \"Wi\",\r\n            \"updated_at\": \"2021-05-09T18:33:08.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 3009,\r\n            \"account\": \"Rais Ahmad\",\r\n            \"updated_at\": \"2021-05-10T11:15:12.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 3239,\r\n            \"account\": \"Photoshop dioxide.\",\r\n            \"updated_at\": \"2021-05-09T11:10:18.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 4115,\r\n            \"account\": \"Oriol Vinyals\",\r\n            \"updated_at\": \"2021-06-22T22:14:14.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 4249,\r\n            \"account\": \"Mawa Shiro\",\r\n            \"updated_at\": \"2021-05-10T21:08:18.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 6250,\r\n            \"account\": \"The Test Drivers\",\r\n            \"updated_at\": \"2021-05-10T16:57:11.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 6981,\r\n            \"account\": \"GermanParker\",\r\n            \"updated_at\": \"2021-05-10T18:52:08.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 7441,\r\n            \"account\": \"Kashmir bleeds\",\r\n            \"updated_at\": \"2021-05-10T01:58:21.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 8369,\r\n            \"account\": \"Josh Disbrow\",\r\n            \"updated_at\": \"2021-05-08T17:50:20.000000Z\"\r\n        },\r\n        {\r\n            \"id\": 9878,\r\n            \"account\": \"Luke Paul Buttigieg\",\r\n            \"updated_at\": \"2021-05-09T13:05:13.000000Z\"\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http://192.168.93.8:10080/api/category/url?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 46934,\r\n    \"last_page_url\": \"http://192.168.93.8:10080/api/category/url?page=46934\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=1\",\r\n            \"label\": 1,\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=2\",\r\n            \"label\": 2,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=3\",\r\n            \"label\": 3,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=4\",\r\n            \"label\": 4,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=5\",\r\n            \"label\": 5,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=6\",\r\n            \"label\": 6,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=7\",\r\n            \"label\": 7,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=8\",\r\n            \"label\": 8,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=9\",\r\n            \"label\": 9,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=10\",\r\n            \"label\": 10,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"...\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=46933\",\r\n            \"label\": 46933,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=46934\",\r\n            \"label\": 46934,\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/url?page=2\",\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": \"http://192.168.93.8:10080/api/category/url?page=2\",\r\n    \"path\": \"http://192.168.93.8:10080/api/category/url\",\r\n    \"per_page\": 10,\r\n    \"prev_page_url\": null,\r\n    \"to\": 10,\r\n    \"total\": 469331\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "get list of url",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "category",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/category/snapshot",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"data\": [\r\n        {\r\n            \"url\": \"http://janskunteokset.blogspot.com/2013/03/\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/794247cbb3c2ccae25f963fee4e889bc.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:37\"\r\n        },\r\n        {\r\n            \"url\": \"http://janskunteokset.blogspot.com/2013/04/\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/fe6d71733df68cdc42653a8264878d0c.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:30\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_03_20_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/6f5ed491b8629e107a1c352ddf2aeac9.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:29\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_03_10_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/2d33a805cefab48ef8a2a892ae39235b.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:29\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_04_09_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/f78e44a26126e27b9346c0f27a394a3f.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:28\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_04_14_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/df983136288a96964cc7bb8edea9f462.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:28\"\r\n        },\r\n        {\r\n            \"url\": \"http://janskunteokset.blogspot.com/2013/05/\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/58493a6250d96b6a2daf2c1a4e399d5f.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:23\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_05_10_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/b4c33c9d2910434d1bab7497e5ef2fc8.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:22\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_04_30_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/ef6b1578f16b37f8a3478d4f7a05c67e.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:22\"\r\n        },\r\n        {\r\n            \"url\": \"http://tukartiub.blogspot.com/2021_04_22_archive.html\",\r\n            \"snapshot\": \"https://cache.irc.org/snapshot/c6a62b1ffc85b2734bf985fa7929c9f5.jpeg\",\r\n            \"timestamp\": \"2021-06-23 06:52:22\"\r\n        }\r\n    ],\r\n    \"first_item\": 1,\r\n    \"last_item\": 10,\r\n    \"total\": 735177\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "get snapshot url and time",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "category",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 13,
+                "name": "MNTL",
+                "endpointPrefix": "",
+                "latency": 0,
+                "port": 3016,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/total",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"TotalRequestAllCurrentYear\": 423,\r\n    \"TotalRequestAllCurrentMonth\": 93,\r\n    \"TotalRequestNew\": 1420,\r\n    \"TotalRequestCompleteNew\": 0,\r\n    \"TotalRequestIncompleteNew\": 1420,\r\n    \"TotalTelco\": 26\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "statistic total value",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/option/year",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"report_number\": \"Sri Muda/12983/21\",\r\n            \"cms_number\": \"CMS211397\",\r\n            \"number\": \"0126456655\",\r\n            \"created_at\": \"2021-06-14 13:03:22\",\r\n            \"requested\": \"amar\"\r\n        },\r\n        {\r\n            \"report_number\": \"KOTA DAMANSARA/1127-1128/21\",\r\n            \"cms_number\": \"CMS211459\",\r\n            \"number\": \"01128625512\",\r\n            \"created_at\": \"2021-06-14 20:55:41\",\r\n            \"requested\": \"khaidir\"\r\n        },\r\n        {\r\n            \"report_number\": \"kepong/5261/2021\",\r\n            \"cms_number\": \"CMS211352\",\r\n            \"number\": \"0199343606\",\r\n            \"created_at\": \"2021-06-15 12:31:07\",\r\n            \"requested\": \"izzuddin\"\r\n        },\r\n        {\r\n            \"report_number\": \"KUALA BERANG 2632/2021\",\r\n            \"cms_number\": \"CMS211462\",\r\n            \"number\": \"01132334322\",\r\n            \"created_at\": \"2021-06-15 14:11:47\",\r\n            \"requested\": \"adli\"\r\n        },\r\n        {\r\n            \"report_number\": \"Tanah Merah: 1248/2021\",\r\n            \"cms_number\": \"CMS211484\",\r\n            \"number\": \"01128707464\",\r\n            \"created_at\": \"2021-06-16 16:39:54\",\r\n            \"requested\": \"amir\"\r\n        },\r\n        {\r\n            \"report_number\": \"JALAN TUN RAZAK/3306/21\",\r\n            \"cms_number\": \"CMS211466\",\r\n            \"number\": \"0143219900\",\r\n            \"created_at\": \"2021-06-22 10:03:20\",\r\n            \"requested\": \"zamiri\"\r\n        },\r\n        {\r\n            \"report_number\": \"JALAN TUN RAZAK/2892/21 (1)\",\r\n            \"cms_number\": \"CMS211407\",\r\n            \"number\": \"0194567998\",\r\n            \"created_at\": \"2021-06-22 17:17:01\",\r\n            \"requested\": \"dzul\"\r\n        },\r\n        {\r\n            \"report_number\": \"KUALA TERENGGANU/4063/21\",\r\n            \"cms_number\": \"CMS211499\",\r\n            \"number\": \"0176073951\",\r\n            \"created_at\": \"2021-06-22 19:37:10\",\r\n            \"requested\": \"azimah\"\r\n        },\r\n        {\r\n            \"report_number\": \"KG BARU SUBANG/4375/2021\",\r\n            \"cms_number\": \"CMS211534\",\r\n            \"number\": \"01130361016\",\r\n            \"created_at\": \"2021-06-23 10:27:57\",\r\n            \"requested\": \"izzuddin\"\r\n        },\r\n        {\r\n            \"report_number\": \"3867/19\",\r\n            \"cms_number\": \"CMS214\",\r\n            \"number\": \"0139810928\",\r\n            \"created_at\": \"2021-01-05 12:25:07\",\r\n            \"requested\": \"khaidir\"\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http://192.168.93.8/api/statistic/option/year?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 43,\r\n    \"last_page_url\": \"http://192.168.93.8/api/statistic/option/year?page=43\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=1\",\r\n            \"label\": \"1\",\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=2\",\r\n            \"label\": \"2\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=3\",\r\n            \"label\": \"3\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=4\",\r\n            \"label\": \"4\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=5\",\r\n            \"label\": \"5\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=6\",\r\n            \"label\": \"6\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=7\",\r\n            \"label\": \"7\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=8\",\r\n            \"label\": \"8\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=9\",\r\n            \"label\": \"9\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=10\",\r\n            \"label\": \"10\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"...\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=42\",\r\n            \"label\": \"42\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=43\",\r\n            \"label\": \"43\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/option/year?page=2\",\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": \"http://192.168.93.8/api/statistic/option/year?page=2\",\r\n    \"path\": \"http://192.168.93.8/api/statistic/option/year\",\r\n    \"per_page\": 10,\r\n    \"prev_page_url\": null,\r\n    \"to\": 10,\r\n    \"total\": 423\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "count per year",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "year",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "max",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/list/year",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\r\n    [\r\n        \"2021\",\r\n        \"2020\",\r\n        \"2019\"\r\n    ]\r\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "List available by year",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list_years",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/chart",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"2021-06\": {\r\n        \"2021-06-23\": 2,\r\n        \"2021-06-22\": 5,\r\n        \"2021-06-20\": 1,\r\n        \"2021-06-19\": 2,\r\n        \"2021-06-16\": 1,\r\n        \"2021-06-15\": 5,\r\n        \"2021-06-14\": 11,\r\n        \"2021-06-11\": 1,\r\n        \"2021-06-10\": 3,\r\n        \"2021-06-09\": 3,\r\n        \"2021-06-08\": 7,\r\n        \"2021-06-07\": 6,\r\n        \"2021-06-05\": 1,\r\n        \"2021-06-04\": 5,\r\n        \"2021-06-03\": 7,\r\n        \"2021-06-02\": 4,\r\n        \"2021-06-01\": 4\r\n    },\r\n    \"2021\": {\r\n        \"2021-06\": 68,\r\n        \"2021-05\": 60,\r\n        \"2021-04\": 61,\r\n        \"2021-03\": 47,\r\n        \"2021-02\": 41,\r\n        \"2021-01\": 71\r\n    }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Statistic chart",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/cms/list",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"date_created\": \"2021-06-14 13:03:22\",\r\n            \"date_finish\": \"2021-06-14 13:03:22\",\r\n            \"report_number\": \"Sri Muda/12983/21\",\r\n            \"cms_number\": \"CMS211397\",\r\n            \"number\": \"0126456655\",\r\n            \"telco\": \"Maxis Bhd\",\r\n            \"name\": \"NORLIZA BINTI SHAFIAT\",\r\n            \"ic\": \"690618105930\",\r\n            \"address\": \"TBG 921 LRG AZMI, KG PANDAN, SELANGOR,\",\r\n            \"active_date\": \"2008-08-21\",\r\n            \"expired_date\": \"2013-07-30\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-14 20:55:41\",\r\n            \"date_finish\": \"2021-06-14 20:55:41\",\r\n            \"report_number\": \"KOTA DAMANSARA/1127-1128/21\",\r\n            \"cms_number\": \"CMS211459\",\r\n            \"number\": \"01128625512\",\r\n            \"telco\": \"U Mobile Sdn Bhd\",\r\n            \"name\": \"MUHAMAD ASRAISUN BIN MOHD RIDZUAN\",\r\n            \"ic\": \"920413060111\",\r\n            \"address\": \"CH 62 KG BELUKAR BARU BATU 3 JALAN GAMBANG 25150 KUANTAN PAHANG\",\r\n            \"active_date\": \"2020-07-09\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-15 12:31:07\",\r\n            \"date_finish\": \"2021-06-15 12:31:07\",\r\n            \"report_number\": \"kepong/5261/2021\",\r\n            \"cms_number\": \"CMS211352\",\r\n            \"number\": \"0199343606\",\r\n            \"telco\": \"Celcom Axiata Bhd\",\r\n            \"name\": \"Mohamaed Shahrul Azlan bin Abdul\",\r\n            \"ic\": \"920707146145\",\r\n            \"address\": \"31 Tingkat, 25200 Kuantan\",\r\n            \"active_date\": \"2017-01-29\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-15 14:11:47\",\r\n            \"date_finish\": \"2021-06-15 14:11:47\",\r\n            \"report_number\": \"KUALA BERANG 2632/2021\",\r\n            \"cms_number\": \"CMS211462\",\r\n            \"number\": \"01132334322\",\r\n            \"telco\": \"U Mobile Sdn Bhd\",\r\n            \"name\": \"LUQMANUL HAKIM BIN ZULKIFLI\",\r\n            \"ic\": \"901206115849\",\r\n            \"address\": \"NO 13 JALAN 7/8 BANDAR TASIK PUTERI 48000 RAWANG\",\r\n            \"active_date\": \"2018-10-21\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-16 16:39:54\",\r\n            \"date_finish\": \"2021-06-16 16:39:54\",\r\n            \"report_number\": \"Tanah Merah: 1248/2021\",\r\n            \"cms_number\": \"CMS211484\",\r\n            \"number\": \"01128707464\",\r\n            \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n            \"name\": \"NOOR FAZREENA BINTI IDROS\",\r\n            \"ic\": \"870923075350\",\r\n            \"address\": \"NO 25, TINGKAT PERPADUAN 1, TAMAN PERPADUAN, ULU KINTA, 31150, PERAK\",\r\n            \"active_date\": \"2020-06-29\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-22 10:03:20\",\r\n            \"date_finish\": \"2021-06-22 10:03:20\",\r\n            \"report_number\": \"JALAN TUN RAZAK/3306/21\",\r\n            \"cms_number\": \"CMS211466\",\r\n            \"number\": \"0143219900\",\r\n            \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n            \"name\": \"Halimah binti Bakar\",\r\n            \"ic\": \"510529715170\",\r\n            \"address\": \"Kamoung Pulau Belacan, Kemumin, 16100 Kota Bharu\",\r\n            \"active_date\": \"2019-03-16\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-22 17:17:01\",\r\n            \"date_finish\": \"2021-06-22 17:17:01\",\r\n            \"report_number\": \"JALAN TUN RAZAK/2892/21 (1)\",\r\n            \"cms_number\": \"CMS211407\",\r\n            \"number\": \"0194567998\",\r\n            \"telco\": \"Celcom Axiata Bhd\",\r\n            \"name\": \"\",\r\n            \"ic\": \"\",\r\n            \"address\": \"\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-22 19:37:10\",\r\n            \"date_finish\": \"2021-06-22 19:37:10\",\r\n            \"report_number\": \"KUALA TERENGGANU/4063/21\",\r\n            \"cms_number\": \"CMS211499\",\r\n            \"number\": \"0176073951\",\r\n            \"telco\": \"Maxis Communications Berhad\",\r\n            \"name\": null,\r\n            \"ic\": null,\r\n            \"address\": null,\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-23 10:27:57\",\r\n            \"date_finish\": \"2021-06-23 10:27:57\",\r\n            \"report_number\": \"KG BARU SUBANG/4375/2021\",\r\n            \"cms_number\": \"CMS211534\",\r\n            \"number\": \"01130361016\",\r\n            \"telco\": \"Yes (YTL Communications Sdn Bhd)\",\r\n            \"name\": \"\",\r\n            \"ic\": \"\",\r\n            \"address\": \"\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2019-04-09 14:39:50\",\r\n            \"date_finish\": null,\r\n            \"report_number\": \"EP71/19\",\r\n            \"cms_number\": \"CMS19552 - URGENT\",\r\n            \"number\": \"0195689971\",\r\n            \"telco\": \"Celcom Axiata Bhd\",\r\n            \"name\": \"MOHD RASHDAN BIN MOHD SHARIFF\",\r\n            \"ic\": \"********6217\",\r\n            \"address\": \"NO 128 Persisiran SRI DAMAI\\r\\nTAMAN SRI DAMAI\\r\",\r\n            \"active_date\": \"2018-07-05\",\r\n            \"expired_date\": \"0000-00-00\"\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http://192.168.93.8/api/statistic/cms/list?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 172,\r\n    \"last_page_url\": \"http://192.168.93.8/api/statistic/cms/list?page=172\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=1\",\r\n            \"label\": \"1\",\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=2\",\r\n            \"label\": \"2\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=3\",\r\n            \"label\": \"3\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=4\",\r\n            \"label\": \"4\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=5\",\r\n            \"label\": \"5\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=6\",\r\n            \"label\": \"6\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=7\",\r\n            \"label\": \"7\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=8\",\r\n            \"label\": \"8\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=9\",\r\n            \"label\": \"9\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=10\",\r\n            \"label\": \"10\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"...\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=171\",\r\n            \"label\": \"171\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=172\",\r\n            \"label\": \"172\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8/api/statistic/cms/list?page=2\",\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": \"http://192.168.93.8/api/statistic/cms/list?page=2\",\r\n    \"path\": \"http://192.168.93.8/api/statistic/cms/list\",\r\n    \"per_page\": 10,\r\n    \"prev_page_url\": null,\r\n    \"to\": 10,\r\n    \"total\": 1714\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "All list",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "list",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "max",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "page",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "year",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "order",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"date_created\": \"2020-06-07 22:54:14\",\r\n            \"date_finish\": null,\r\n            \"report_number\": \"Report010\",\r\n            \"cms_number\": \"CMS010\",\r\n            \"number\": \"0126298620\",\r\n            \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n            \"name\": \"ZULKIFLI BIN ISMAIL \",\r\n            \"ic\": \"700906035603\",\r\n            \"address\": \"NO 13, KAMPUNG DIOH, KUALA PILAH\",\r\n            \"active_date\": \"2021-05-17\",\r\n            \"expired_date\": \"2021-05-21\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-03-02 22:39:21\",\r\n            \"date_finish\": \"2021-06-02 22:39:21\",\r\n            \"report_number\": \"testing-123\",\r\n            \"cms_number\": \"cms-1521\",\r\n            \"number\": \"0183898507\",\r\n            \"telco\": \"U Mobile Sdn Bhd\",\r\n            \"name\": \"zack facebook\",\r\n            \"ic\": \"800909056112\",\r\n            \"address\": \"alamat\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-03 17:32:52\",\r\n            \"date_finish\": \"2021-06-03 17:32:52\",\r\n            \"report_number\": \"testing-001\",\r\n            \"cms_number\": \"CMS011\",\r\n            \"number\": \"0174671638\",\r\n            \"telco\": \"Maxis Bhd\",\r\n            \"name\": \"\",\r\n            \"ic\": \"\",\r\n            \"address\": \"\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-05 15:58:20\",\r\n            \"date_finish\": \"2021-06-05 15:58:20\",\r\n            \"report_number\": \"testing-001\",\r\n            \"cms_number\": \"CMS011\",\r\n            \"number\": \"0183898507\",\r\n            \"telco\": \"U Mobile Sdn Bhd\",\r\n            \"name\": \"zulkhairy\",\r\n            \"ic\": \"850909085685\",\r\n            \"address\": \"alamat\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-05 15:58:20\",\r\n            \"date_finish\": \"2021-06-05 15:58:20\",\r\n            \"report_number\": \"testing-001\",\r\n            \"cms_number\": \"CMS011\",\r\n            \"number\": \"0174671638\",\r\n            \"telco\": \"Maxis Bhd\",\r\n            \"name\": \"zulkhairy\",\r\n            \"ic\": \"850909085685\",\r\n            \"address\": \"alamat\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-13 19:28:05\",\r\n            \"date_finish\": \"2021-06-13 19:28:05\",\r\n            \"report_number\": \"testing-0012\",\r\n            \"cms_number\": \"CMS0112\",\r\n            \"number\": \"0183898507\",\r\n            \"telco\": \"U Mobile Sdn Bhd\",\r\n            \"name\": \"\",\r\n            \"ic\": \"\",\r\n            \"address\": \"\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        },\r\n        {\r\n            \"date_created\": \"2021-06-13 19:28:05\",\r\n            \"date_finish\": \"2021-06-13 19:28:05\",\r\n            \"report_number\": \"testing-0012\",\r\n            \"cms_number\": \"CMS0112\",\r\n            \"number\": \"0174671638\",\r\n            \"telco\": \"Maxis Bhd\",\r\n            \"name\": \"\",\r\n            \"ic\": \"\",\r\n            \"address\": \"\",\r\n            \"active_date\": \"2000-01-01\",\r\n            \"expired_date\": \"2000-01-01\"\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http://mtnl-api.zhs/api/statistic/cms/list?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 1,\r\n    \"last_page_url\": \"http://mtnl-api.zhs/api/statistic/cms/list?page=1\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://mtnl-api.zhs/api/statistic/cms/list?page=1\",\r\n            \"label\": 1,\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": null,\r\n    \"path\": \"http://mtnl-api.zhs/api/statistic/cms/list\",\r\n    \"per_page\": 10,\r\n    \"prev_page_url\": null,\r\n    \"to\": 7,\r\n    \"total\": 7\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "Preview specific CMSxxx",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "auto|cms|phone|ic",
+                                        "isRegex": false
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "value",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/statistic/new/request",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\r\n    {\r\n        \"report_number\": \"Sri Muda/12983/21\",\r\n        \"cms_number\": \"CMS211397\",\r\n        \"number\": \"0126456655\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2021-06-14 13:03:22\"\r\n    },\r\n    {\r\n        \"report_number\": \"KOTA DAMANSARA/1127-1128/21\",\r\n        \"cms_number\": \"CMS211459\",\r\n        \"number\": \"01128625512\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2021-06-14 20:55:41\"\r\n    },\r\n    {\r\n        \"report_number\": \"kepong/5261/2021\",\r\n        \"cms_number\": \"CMS211352\",\r\n        \"number\": \"0199343606\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2021-06-15 12:31:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUALA BERANG 2632/2021\",\r\n        \"cms_number\": \"CMS211462\",\r\n        \"number\": \"01132334322\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2021-06-15 14:11:47\"\r\n    },\r\n    {\r\n        \"report_number\": \"Tanah Merah: 1248/2021\",\r\n        \"cms_number\": \"CMS211484\",\r\n        \"number\": \"01128707464\",\r\n        \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2021-06-16 16:39:54\"\r\n    },\r\n    {\r\n        \"report_number\": \"JALAN TUN RAZAK/3306/21\",\r\n        \"cms_number\": \"CMS211466\",\r\n        \"number\": \"0143219900\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2021-06-22 10:03:20\"\r\n    },\r\n    {\r\n        \"report_number\": \"JALAN TUN RAZAK/2892/21 (1)\",\r\n        \"cms_number\": \"CMS211407\",\r\n        \"number\": \"0194567998\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2021-06-22 17:17:01\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUALA TERENGGANU/4063/21\",\r\n        \"cms_number\": \"CMS211499\",\r\n        \"number\": \"0176073951\",\r\n        \"telco\": \"Maxis Communications Berhad\",\r\n        \"created_at\": \"2021-06-22 19:37:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"KG BARU SUBANG/4375/2021\",\r\n        \"cms_number\": \"CMS211534\",\r\n        \"number\": \"01130361016\",\r\n        \"telco\": \"Yes (YTL Communications Sdn Bhd)\",\r\n        \"created_at\": \"2021-06-23 10:27:57\"\r\n    },\r\n    {\r\n        \"report_number\": \"Tambun/272/19\",\r\n        \"cms_number\": \"CMS19372\",\r\n        \"number\": \"0187798462\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-04-09 19:11:52\"\r\n    },\r\n    {\r\n        \"report_number\": \"Thsl/9983/19\",\r\n        \"cms_number\": \"CMS19567\",\r\n        \"number\": \"0127137013\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-04-15 14:25:59\"\r\n    },\r\n    {\r\n        \"report_number\": \"KOTA DAMANSARA 5837/18\",\r\n        \"cms_number\": \"CMS19538\",\r\n        \"number\": \"0149678083\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-04-16 09:27:14\"\r\n    },\r\n    {\r\n        \"report_number\": \"SULIT KE.HD(86) 778/01Klt.12SK.1 (01)\",\r\n        \"cms_number\": \"CMS19515\",\r\n        \"number\": \"0146281381\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-04-18 17:38:14\"\r\n    },\r\n    {\r\n        \"report_number\": \"GITA 3648/19\",\r\n        \"cms_number\": \"CMS19622\",\r\n        \"number\": \"0137426109\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-04-22 16:23:21\"\r\n    },\r\n    {\r\n        \"report_number\": \"SLIM RIVER RPT 786/19\",\r\n        \"cms_number\": \"CMS19591\",\r\n        \"number\": \"0198785401\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-04-24 09:13:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"SLIM RIVER RPT 786/19\",\r\n        \"cms_number\": \"CMS19591\",\r\n        \"number\": \"60198785401\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-04-24 14:16:55\"\r\n    },\r\n    {\r\n        \"report_number\": \"TELUK INTAN RPT 12950/17\",\r\n        \"cms_number\": \"CMS19645\",\r\n        \"number\": \"0189184217\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-04-25 15:18:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"BINJAI/661/19\",\r\n        \"cms_number\": \"CMS19610\",\r\n        \"number\": \"0182190653\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-04-30 15:54:54\"\r\n    },\r\n    {\r\n        \"report_number\": \"KANGAR REPOT 3663/2019\",\r\n        \"cms_number\": \"CMS19701\",\r\n        \"number\": \"0128991208\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-05-07 23:20:21\"\r\n    },\r\n    {\r\n        \"report_number\": \"BULOH KASAP 929/19\",\r\n        \"cms_number\": \"CMS19675\",\r\n        \"number\": \"019-7947602\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-05-10 09:47:56\"\r\n    },\r\n    {\r\n        \"report_number\": \"CYBERJAYA/1318/19\",\r\n        \"cms_number\": \"CMS19742\",\r\n        \"number\": \"0168105001\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-05-14 15:19:17\"\r\n    },\r\n    {\r\n        \"report_number\": \"Gita/Rpt/3659/19\",\r\n        \"cms_number\": \"CMS19775\",\r\n        \"number\": \"01164019004\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-05-15 16:42:46\"\r\n    },\r\n    {\r\n        \"report_number\": \"HQ/R/09/2019\",\r\n        \"cms_number\": \"CMS19805\",\r\n        \"number\": \"0123702233\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-05-27 14:07:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"Muar/7192/19\",\r\n        \"cms_number\": \"CMS19851\",\r\n        \"number\": \"019-6580701\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-05-30 11:22:00\"\r\n    },\r\n    {\r\n        \"report_number\": \" KENINGAU/JSJ/KS/00196/19\",\r\n        \"cms_number\": \"CMS19921\",\r\n        \"number\": \"01126538205\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-06-19 17:29:22\"\r\n    },\r\n    {\r\n        \"report_number\": \"kupang/1129/19\",\r\n        \"cms_number\": \"CMS19692\",\r\n        \"number\": \"0164643838\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-06-20 12:31:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"KPN(PR)56/5/11\",\r\n        \"cms_number\": \"CMS19962\",\r\n        \"number\": \"0146125901\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-06-30 12:17:37\"\r\n    },\r\n    {\r\n        \"report_number\": \"KANGAR/JSJ/KS/254/19\",\r\n        \"cms_number\": \"CMS191020\",\r\n        \"number\": \"0176941843\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-07-04 15:04:39\"\r\n    },\r\n    {\r\n        \"report_number\": \"KANGAR/JSJ/KS/254/19\",\r\n        \"cms_number\": \"CMS191020\",\r\n        \"number\": \"0367309023\",\r\n        \"telco\": \"Telekom\",\r\n        \"created_at\": \"2019-07-04 15:04:39\"\r\n    },\r\n    {\r\n        \"report_number\": \" KANGAR/JSJ/KS/347/19\",\r\n        \"cms_number\": \"CMS191049\",\r\n        \"number\": \"0124521440\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-07-11 15:22:51\"\r\n    },\r\n    {\r\n        \"report_number\": \"PUSAT/05075/19\",\r\n        \"cms_number\": \"CMS191099\",\r\n        \"number\": \"0164570136\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-07-23 16:33:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"TAMPOI/009736/19\",\r\n        \"cms_number\": \"CMS191090\",\r\n        \"number\": \"0123128770\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-07-24 09:20:20\"\r\n    },\r\n    {\r\n        \"report_number\": \"TRIANG/242/19\",\r\n        \"cms_number\": \"CMS191117\",\r\n        \"number\": \"0162698401\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-07-25 21:31:58\"\r\n    },\r\n    {\r\n        \"report_number\": \"Kota Damansara rpt:2672/19\",\r\n        \"cms_number\": \"CMS191163\",\r\n        \"number\": \"0189810275\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-07-29 09:15:41\"\r\n    },\r\n    {\r\n        \"report_number\": \"KULAI RPT 5299/19\",\r\n        \"cms_number\": \"CMS191187\",\r\n        \"number\": \"01139371649\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-08-01 14:20:45\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIFF OFF 17/8/19\",\r\n        \"cms_number\": \"TIFF OFF 17/8/19\",\r\n        \"number\": \"0192576750\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2019-08-18 12:28:37\"\r\n    },\r\n    {\r\n        \"report_number\": \"PEP 59/19\",\r\n        \"cms_number\": \"CMS191269\",\r\n        \"number\": \"0172364953\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-08-19 11:24:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"DUNGUN/002625/19\",\r\n        \"cms_number\": \"CMS191287\",\r\n        \"number\": \"0172733997\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2019-08-19 11:26:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"CMS191278\",\r\n        \"cms_number\": \"CMS191278\",\r\n        \"number\": \"01110550121\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-08-19 11:26:37\"\r\n    },\r\n    {\r\n        \"report_number\": \" TIP OFF (21/8/2019)\",\r\n        \"cms_number\": \" TIP OFF (21/8/2019)\",\r\n        \"number\": \" 0198089581\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-08-22 08:49:42\"\r\n    },\r\n    {\r\n        \"report_number\": \"TAWAU/20479/2016\",\r\n        \"cms_number\": \"CMS191343\",\r\n        \"number\": \"0162388740\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-08-30 16:57:23\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF (31/08/2019)\",\r\n        \"cms_number\": \"Zara\",\r\n        \"number\": \" 0192759238\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-08-31 19:32:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"JALAN TUN RAZAK/8071/19\",\r\n        \"cms_number\": \"CMS191389\",\r\n        \"number\": \"01116961207\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-09-02 16:08:29\"\r\n    },\r\n    {\r\n        \"report_number\": \"TAWAU/14651/2019\",\r\n        \"cms_number\": \"CMS191355\",\r\n        \"number\": \"0128441922\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-09-07 21:46:42\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUANTAN/25371/19 (4)\",\r\n        \"cms_number\": \"CMS191438 (URGENT)\",\r\n        \"number\": \"0102759683\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-09-14 10:49:21\"\r\n    },\r\n    {\r\n        \"report_number\": \"Sentul/16342/19\",\r\n        \"cms_number\": \"CMS191462\",\r\n        \"number\": \"0149320398\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-09-20 11:46:08\"\r\n    },\r\n    {\r\n        \"report_number\": \"SEPANG/KS/824/19-2\",\r\n        \"cms_number\": \"CMS191407\",\r\n        \"number\": \"0178406320\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-09-23 10:53:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF (25/9/2019): ADUAN MELALUI WHATSAPP\",\r\n        \"cms_number\": \"Shireen\",\r\n        \"number\": \"0125424827\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-09-25 20:53:35\"\r\n    },\r\n    {\r\n        \"report_number\": \"SALAK SOUTH/10184/19\",\r\n        \"cms_number\": \"CMS191522\",\r\n        \"number\": \"0135644471\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-09-30 10:21:27\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF (03/10/2019)\",\r\n        \"cms_number\": \"TIP OFF (03/10/2019)\",\r\n        \"number\": \"0127387571\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-10-03 22:53:44\"\r\n    },\r\n    {\r\n        \"report_number\": \"MARANG/JSJK/KS/19/19\",\r\n        \"cms_number\": \"CMS191534\",\r\n        \"number\": \"011-36377252\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-10-08 16:10:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"Selayang/18419/1\",\r\n        \"cms_number\": \"CMS191545\",\r\n        \"number\": \"0162751851\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-10-11 12:03:37\"\r\n    },\r\n    {\r\n        \"report_number\": \"SELAYANG/18419/1\",\r\n        \"cms_number\": \"CMS191545\",\r\n        \"number\": \"0182095758\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-10-11 14:55:16\"\r\n    },\r\n    {\r\n        \"report_number\": \"PADANG BESAR RPT: 2894/19\",\r\n        \"cms_number\": \"CMS191589\",\r\n        \"number\": \"01114861859\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-10-11 19:48:16\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF (12/10/2019)\",\r\n        \"cms_number\": \"Ahya Khairunnisa\",\r\n        \"number\": \"0102125465\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-10-12 20:19:15\"\r\n    },\r\n    {\r\n        \"report_number\": \"Azo Putra\",\r\n        \"cms_number\": \"Tippof19Oct\",\r\n        \"number\": \"0174846443\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2019-10-19 20:52:28\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUBANG KERIAN/5217/2019\",\r\n        \"cms_number\": \"CMS191510\",\r\n        \"number\": \"0199918980\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-10-21 10:17:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"PADANG BESAR RPT: 2894/19\",\r\n        \"cms_number\": \"CMS191589\",\r\n        \"number\": \"01159914390\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2019-10-25 15:09:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"PANTAI/770/19\",\r\n        \"cms_number\": \"CMS191753\",\r\n        \"number\": \"01163616110\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-11-14 10:27:12\"\r\n    },\r\n    {\r\n        \"report_number\": \" SULIT.KE.HD (86)661/05/KLT.57/ACS(P)A018/201\",\r\n        \"cms_number\": \"CMS191743\",\r\n        \"number\": \"0162535550\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2019-11-14 11:37:33\"\r\n    },\r\n    {\r\n        \"report_number\": \"SRI HARTAMAS 4913/19\",\r\n        \"cms_number\": \"CMS191787\",\r\n        \"number\": \"01136457604\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-11-15 11:49:15\"\r\n    },\r\n    {\r\n        \"report_number\": \" WAKAF BHARU RPT: 2056/2019\",\r\n        \"cms_number\": \"CMS191830\",\r\n        \"number\": \"0146654000\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-11-25 08:05:19\"\r\n    },\r\n    {\r\n        \"report_number\": \"BATU RAKIT/1594/19\",\r\n        \"cms_number\": \"CMS191891\",\r\n        \"number\": \"0169254984\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-12-10 13:45:52\"\r\n    },\r\n    {\r\n        \"report_number\": \"MTR/3166/19\",\r\n        \"cms_number\": \"CMS191899\",\r\n        \"number\": \"0169502659\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-12-10 17:06:31\"\r\n    },\r\n    {\r\n        \"report_number\": \"KULIM/11006/19\",\r\n        \"cms_number\": \"CMS191908\",\r\n        \"number\": \"0136857373\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-12-16 15:59:36\"\r\n    },\r\n    {\r\n        \"report_number\": \"MIRI/RPT/138923/2019\",\r\n        \"cms_number\": \"CMS191973\",\r\n        \"number\": \"0132058320\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2019-12-23 16:01:34\"\r\n    },\r\n    {\r\n        \"report_number\": \"TANAH HITAM/000462/19\",\r\n        \"cms_number\": \"CMS191975\",\r\n        \"number\": \"0162166009\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2019-12-23 18:20:19\"\r\n    },\r\n    {\r\n        \"report_number\": \"SIPITANG/JSJ/KS/00175/2019\",\r\n        \"cms_number\": \"CMS2040\",\r\n        \"number\": \"0108244239\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-01-14 09:49:32\"\r\n    },\r\n    {\r\n        \"report_number\": \"MOTAC.600-6/6/25JLD 2\",\r\n        \"cms_number\": \"CMS2073\",\r\n        \"number\": \"0122926890\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-01-21 15:50:54\"\r\n    },\r\n    {\r\n        \"report_number\": \"KAPIT/000169/20\",\r\n        \"cms_number\": \"CMS20124\",\r\n        \"number\": \"0164644053\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-02-03 10:21:59\"\r\n    },\r\n    {\r\n        \"report_number\": \"BERA/JSJK/KS/10/20\",\r\n        \"cms_number\": \"CMS20181\",\r\n        \"number\": \"01151913907\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-02-11 17:39:11\"\r\n    },\r\n    {\r\n        \"report_number\": \"CMS20259\",\r\n        \"cms_number\": \"CMS20259\",\r\n        \"number\": \"0182883415\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-02-13 13:29:17\"\r\n    },\r\n    {\r\n        \"report_number\": \"KOTA SAMARAHAN/RPT/716/20\",\r\n        \"cms_number\": \"CMS20239\",\r\n        \"number\": \"0135515219\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-02-14 18:39:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"MCMC\",\r\n        \"cms_number\": \"CMS20187\",\r\n        \"number\": \"0104606927\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-02-25 10:18:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUANTAN/009770/18\",\r\n        \"cms_number\": \"CMS20349\",\r\n        \"number\": \"0102718055\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-02-25 10:41:02\"\r\n    },\r\n    {\r\n        \"report_number\": \"KLANG 4280/20\",\r\n        \"cms_number\": \"20331\",\r\n        \"number\": \"0173021878\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-02-25 16:46:58\"\r\n    },\r\n    {\r\n        \"report_number\": \"PRESINT 7/1819/20\",\r\n        \"cms_number\": \"CMS20352\",\r\n        \"number\": \"0188700073\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-02-27 13:54:30\"\r\n    },\r\n    {\r\n        \"report_number\": \"TAMANPELANGI/1484/20\",\r\n        \"cms_number\": \"CMS20326\",\r\n        \"number\": \"0147385857\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-02-28 10:37:29\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUDAT/JSJ/KS/020/20\",\r\n        \"cms_number\": \"CMS20407\",\r\n        \"number\": \"0149514248\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-03-02 22:04:48\"\r\n    },\r\n    {\r\n        \"report_number\": \" TRAVERS RPT: 1425/2020\",\r\n        \"cms_number\": \"CMS20418\",\r\n        \"number\": \"0132129310\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-03-05 11:19:30\"\r\n    },\r\n    {\r\n        \"report_number\": \" PEKAN BHARU RPT 755/20\",\r\n        \"cms_number\": \"CMS20405\",\r\n        \"number\": \"0182457259\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-03-05 14:31:23\"\r\n    },\r\n    {\r\n        \"report_number\": \"BFT/JSJ/KS/60/2020\",\r\n        \"cms_number\": \"CMS20390\",\r\n        \"number\": \"0168316660\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-03-10 10:34:55\"\r\n    },\r\n    {\r\n        \"report_number\": \"JLN TUN RAZAK/1898/20\",\r\n        \"cms_number\": \"CMS20389\",\r\n        \"number\": \"01126090173\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-03-15 22:16:22\"\r\n    },\r\n    {\r\n        \"report_number\": \"JALAN TUN RAZAK/1995/20\",\r\n        \"cms_number\": \"CMS20442\",\r\n        \"number\": \"0174983061\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-03-19 18:49:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"SKMM(T)09-NMD/MONITORING/2020(0036)\",\r\n        \"cms_number\": \"CMS20538\",\r\n        \"number\": \"0174829183\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-03-24 18:15:47\"\r\n    },\r\n    {\r\n        \"report_number\": \"SSM/BS/IP(EP156)/226/110817-1\",\r\n        \"cms_number\": \"CMS20464\",\r\n        \"number\": \"0129728910\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-03-26 01:30:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"Kulim/1970/20 (Saksi 3)\",\r\n        \"cms_number\": \"CMS20612\",\r\n        \"number\": \"01137968349\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-03-30 12:37:36\"\r\n    },\r\n    {\r\n        \"report_number\": \"CMS20615\",\r\n        \"cms_number\": \"CMS20615\",\r\n        \"number\": \"01110812217\",\r\n        \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-03-31 16:43:41\"\r\n    },\r\n    {\r\n        \"report_number\": \"CMS20672\",\r\n        \"cms_number\": \"CMS20672\",\r\n        \"number\": \"01162001624\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-04-08 14:49:44\"\r\n    },\r\n    {\r\n        \"report_number\": \"PETALING JAYA 3805/20\",\r\n        \"cms_number\": \"CMS20749\",\r\n        \"number\": \"0175806768\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-04-16 14:55:24\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF 17/04/2020\",\r\n        \"cms_number\": \"Shafik\",\r\n        \"number\": \"01162621010\",\r\n        \"telco\": \"Webe (Packet One)\",\r\n        \"created_at\": \"2020-04-21 16:49:10\"\r\n    },\r\n    {\r\n        \"report_number\": \"JELUTONG/002366/20\",\r\n        \"cms_number\": \"CMS20833\",\r\n        \"number\": \"0196096550\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-04-26 16:39:13\"\r\n    },\r\n    {\r\n        \"report_number\": \"JTR/3106/20\",\r\n        \"cms_number\": \"CMS20821\",\r\n        \"number\": \"0132537668\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-04-27 06:54:18\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP off 19/04/2020\",\r\n        \"cms_number\": \"MUNSYI\",\r\n        \"number\": \"0164772777\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-04-27 11:50:32\"\r\n    },\r\n    {\r\n        \"report_number\": \"ALOR SETAR 7649/20\",\r\n        \"cms_number\": \"CMS20845\",\r\n        \"number\": \"0137616770\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-05-02 13:45:47\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF 27/04/20 wasap\",\r\n        \"cms_number\": \"TIP OFF 27/04/20\",\r\n        \"number\": \"0123080879\",\r\n        \"telco\": \"Webe (Packet One)\",\r\n        \"created_at\": \"2020-05-02 16:01:06\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIP OFF 28/04/2020\",\r\n        \"cms_number\": \"YUSOF\",\r\n        \"number\": \"0178589586\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-05-05 01:14:30\"\r\n    },\r\n    {\r\n        \"report_number\": \"Siska qirana\",\r\n        \"cms_number\": \"Siska qirana\",\r\n        \"number\": \"0143269444\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-05-22 08:34:27\"\r\n    },\r\n    {\r\n        \"report_number\": \"JALAN PATANI RPT: 3891/2020\",\r\n        \"cms_number\": \"CMS201074\",\r\n        \"number\": \"01161479434\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-05-28 10:50:26\"\r\n    },\r\n    {\r\n        \"report_number\": \"SRI MUDA 10321/2020\",\r\n        \"cms_number\": \"CMS201222\",\r\n        \"number\": \"0149944415\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-06-10 14:28:48\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN/PKKKul.600-3/4/3(1)2 \",\r\n        \"cms_number\": \"CMS201257\",\r\n        \"number\": \"013-9813740\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-06-16 20:52:26\"\r\n    },\r\n    {\r\n        \"report_number\": \"MACHANG 2757/20\",\r\n        \"cms_number\": \"CMS201361\",\r\n        \"number\": \"0196171312 \",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-06-25 00:48:05\"\r\n    },\r\n    {\r\n        \"report_number\": \"PAPAR/JSJ/KS/253/20\",\r\n        \"cms_number\": \"CMS201221\",\r\n        \"number\": \"01151690987\",\r\n        \"telco\": \"DiGi Telecommunications Sdn Bhd\",\r\n        \"created_at\": \"2020-06-26 13:43:57\"\r\n    },\r\n    {\r\n        \"report_number\": \"Kuala Pilah 884/20\",\r\n        \"cms_number\": \"CMS201343\",\r\n        \"number\": \"0136844706\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-06-28 22:12:16\"\r\n    },\r\n    {\r\n        \"report_number\": \"WangsaMaju/JSJ/KS/1401/20\",\r\n        \"cms_number\": \"CMS201390\",\r\n        \"number\": \"01110730366\",\r\n        \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-07-01 12:04:13\"\r\n    },\r\n    {\r\n        \"report_number\": \"P7/4114/20\",\r\n        \"cms_number\": \"CMS201419\",\r\n        \"number\": \"0103776373\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-07-02 21:19:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN.PKKKul.600-3/4/3(1)\",\r\n        \"cms_number\": \"CMS201258\",\r\n        \"number\": \"0193437267\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-07-03 14:04:21\"\r\n    },\r\n    {\r\n        \"report_number\": \"Banting/4175/20\",\r\n        \"cms_number\": \"CMS201407\",\r\n        \"number\": \"01111488135\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-07-08 09:29:09\"\r\n    },\r\n    {\r\n        \"report_number\": \"JLN TUN RAZAK/004899/20\",\r\n        \"cms_number\": \"CMS201524\",\r\n        \"number\": \"0176413314\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-07-13 14:26:44\"\r\n    },\r\n    {\r\n        \"report_number\": \"BUKIT RAJA/4670/20 \",\r\n        \"cms_number\": \"CMS201549\",\r\n        \"number\": \"0192282121\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-07-23 02:25:06\"\r\n    },\r\n    {\r\n        \"report_number\": \"SENTUL RPT:7931/20\",\r\n        \"cms_number\": \"CMS201437\",\r\n        \"number\": \"2405:3800:088\",\r\n        \"telco\": \"Unknown\",\r\n        \"created_at\": \"2020-07-27 12:34:25\"\r\n    },\r\n    {\r\n        \"report_number\": \"02021632\",\r\n        \"cms_number\": \"CMS201649\",\r\n        \"number\": \"0128736992\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-07-29 10:58:18\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUALA SELANGOR/2956/20\",\r\n        \"cms_number\": \"CMS201663\",\r\n        \"number\": \"01112055313\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-07-31 23:58:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"TRIANG/1232/17\",\r\n        \"cms_number\": \"CMS201596\",\r\n        \"number\": \"0105704888\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-08-02 19:07:22\"\r\n    },\r\n    {\r\n        \"report_number\": \"BDR HILIR REPOT 383/20 \",\r\n        \"cms_number\": \"CMS201577\",\r\n        \"number\": \"01158943554\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-08-03 02:18:35\"\r\n    },\r\n    {\r\n        \"report_number\": \"SG. BULOH/004820/20\",\r\n        \"cms_number\": \"CMS201715\",\r\n        \"number\": \"0175630773\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-08-10 08:54:41\"\r\n    },\r\n    {\r\n        \"report_number\": \"Sek. 6 Rpt 1131/20\",\r\n        \"cms_number\": \"CMS201709\",\r\n        \"number\": \"01112056274\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-08-10 13:32:23\"\r\n    },\r\n    {\r\n        \"report_number\": \"JTR/5321/20\",\r\n        \"cms_number\": \"CMS201671\",\r\n        \"number\": \"0173650730\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-08-12 21:01:54\"\r\n    },\r\n    {\r\n        \"report_number\": \"KOTA BHARU 9575/20\",\r\n        \"cms_number\": \"CMS201752\",\r\n        \"number\": \"0147544908\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-08-14 10:17:30\"\r\n    },\r\n    {\r\n        \"report_number\": \"JSJ/KS/1607/20 (V2)\",\r\n        \"cms_number\": \"CMS201726\",\r\n        \"number\": \"01158583675\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-08-19 09:13:22\"\r\n    },\r\n    {\r\n        \"report_number\": \"MUAR/9918/20\",\r\n        \"cms_number\": \"CMS201768\",\r\n        \"number\": \" 011-5687 507\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-08-20 23:42:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"MUAR/9918/20\",\r\n        \"cms_number\": \"CMS201768\",\r\n        \"number\": \"011-20606761\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-08-20 23:42:03\"\r\n    },\r\n    {\r\n        \"report_number\": \"b11(03) DLM PKDSPS/UPP/MKH/F/2020\",\r\n        \"cms_number\": \"CMS201831\",\r\n        \"number\": \"0165517249\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-08-27 14:11:43\"\r\n    },\r\n    {\r\n        \"report_number\": \"IPOH/JSJ/KS/1422/20\",\r\n        \"cms_number\": \"CMS201852\",\r\n        \"number\": \"0196366670\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-09-07 10:22:52\"\r\n    },\r\n    {\r\n        \"report_number\": \"IPOH/JSJ/KS/1422/20\",\r\n        \"cms_number\": \"CMS201852\",\r\n        \"number\": \"0173688826\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-09-07 10:22:52\"\r\n    },\r\n    {\r\n        \"report_number\": \"RANTAU PANJANG 2663/2020\",\r\n        \"cms_number\": \"CMS201843\",\r\n        \"number\": \"01162307690\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-09-07 12:23:40\"\r\n    },\r\n    {\r\n        \"report_number\": \" PJ/JSJ/KS/2641/2020\",\r\n        \"cms_number\": \"CMS201985\",\r\n        \"number\": \"0173367002\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-09-17 20:40:37\"\r\n    },\r\n    {\r\n        \"report_number\": \"AIP/TT/0035/2020\",\r\n        \"cms_number\": \"CMS202048\",\r\n        \"number\": \"01110845371\",\r\n        \"telco\": \"REDOne Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-09-24 14:02:09\"\r\n    },\r\n    {\r\n        \"report_number\": \"AIP/TT/0035/2020\",\r\n        \"cms_number\": \"CMS202048\",\r\n        \"number\": \"0136842864\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-09-25 11:39:06\"\r\n    },\r\n    {\r\n        \"report_number\": \"JSJ/KS/970/2020\",\r\n        \"cms_number\": \"CMS202075\",\r\n        \"number\": \"0167270039\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-09-25 11:42:44\"\r\n    },\r\n    {\r\n        \"report_number\": \"KM/JSJK/KS/160/20\",\r\n        \"cms_number\": \"CMS202072\",\r\n        \"number\": \"01151352889\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-09-29 00:13:24\"\r\n    },\r\n    {\r\n        \"report_number\": \"PASIRGUDANG/008343/19\",\r\n        \"cms_number\": \"CMS202016\",\r\n        \"number\": \"0194962136\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-09-29 23:28:00\"\r\n    },\r\n    {\r\n        \"report_number\": \"PASIRGUDANG/008343/19\",\r\n        \"cms_number\": \"CMS202016\",\r\n        \"number\": \"0183299322\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-09-29 23:28:00\"\r\n    },\r\n    {\r\n        \"report_number\": \"BRICKFIELDS/007647/20\",\r\n        \"cms_number\": \"CMS202138\",\r\n        \"number\": \"0165001153\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-10-05 11:37:38\"\r\n    },\r\n    {\r\n        \"report_number\": \"MUAR/12246/20\",\r\n        \"cms_number\": \"CMS202272\",\r\n        \"number\": \"0102618998\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-10-22 12:59:55\"\r\n    },\r\n    {\r\n        \"report_number\": \"TIPOFF Qaasrina\",\r\n        \"cms_number\": \"TWITTER QASSRINAA\",\r\n        \"number\": \"0125440084\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-10-26 14:02:23\"\r\n    },\r\n    {\r\n        \"report_number\": \"SAUJANA UTAMA/3339/20\",\r\n        \"cms_number\": \"CMS202301\",\r\n        \"number\": \"01112059851\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-10-27 10:53:52\"\r\n    },\r\n    {\r\n        \"report_number\": \"AEROPOLIS 4250/20\",\r\n        \"cms_number\": \"CMS202313\",\r\n        \"number\": \"0168111811\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-10-27 12:07:57\"\r\n    },\r\n    {\r\n        \"report_number\": \"TAMBUN RPT 1712/2020\",\r\n        \"cms_number\": \"CMS202380\",\r\n        \"number\": \"0173150613\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-11-03 12:06:44\"\r\n    },\r\n    {\r\n        \"report_number\": \"KUANTAN/019139/20\",\r\n        \"cms_number\": \"CMS202397\",\r\n        \"number\": \"0162086625\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-11-06 10:47:57\"\r\n    },\r\n    {\r\n        \"report_number\": \"BRICKFIELDS/9755/20\",\r\n        \"cms_number\": \"CMS202381\",\r\n        \"number\": \"01126116170\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-11-09 02:00:15\"\r\n    },\r\n    {\r\n        \"report_number\": \"TM/JSJK/KS/67/20\",\r\n        \"cms_number\": \"CMS202409\",\r\n        \"number\": \"0169008381\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-11-11 08:04:55\"\r\n    },\r\n    {\r\n        \"report_number\": \" JALAN TUN RAZAK/7199/20\",\r\n        \"cms_number\": \"CMS202374\",\r\n        \"number\": \"0183658224\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-11-11 09:38:18\"\r\n    },\r\n    {\r\n        \"report_number\": \" KK/JSJ/KS/1492/20\",\r\n        \"cms_number\": \"CMS202442\",\r\n        \"number\": \"0183153797\",\r\n        \"telco\": \"U Mobile Sdn Bhd\",\r\n        \"created_at\": \"2020-11-17 17:36:19\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN:PKK.600-16-18/6 jld2()\",\r\n        \"cms_number\": \"CMS202418\",\r\n        \"number\": \"0145178712\",\r\n        \"telco\": \"XOX Com Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-11-23 17:21:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN:PKK.600-16-18/6 jld2()\",\r\n        \"cms_number\": \"CMS202418\",\r\n        \"number\": \"0185734005\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-11-23 17:21:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN:PKK.600-16-18/6 jld2()\",\r\n        \"cms_number\": \"CMS202418\",\r\n        \"number\": \"01126032877\",\r\n        \"telco\": \"Tune Talk Sdn Bhd (Celcom MVNO)\",\r\n        \"created_at\": \"2020-11-23 17:21:07\"\r\n    },\r\n    {\r\n        \"report_number\": \"PERMAISURI RPT 2209/2020\",\r\n        \"cms_number\": \"CMS202529\",\r\n        \"number\": \"0178211794\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-11-24 10:59:40\"\r\n    },\r\n    {\r\n        \"report_number\": \"SRI DAMANSARA/006643/20\",\r\n        \"cms_number\": \"CMS202485\",\r\n        \"number\": \"01117975006\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-11-25 16:35:57\"\r\n    },\r\n    {\r\n        \"report_number\": \"MACHAP BARU 394/20\",\r\n        \"cms_number\": \"CMS202547\",\r\n        \"number\": \"0127148949\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-11-26 09:11:06\"\r\n    },\r\n    {\r\n        \"report_number\": \"SANDAKAN/14984/20\",\r\n        \"cms_number\": \"CMS202535\",\r\n        \"number\": \"0142030711\",\r\n        \"telco\": \"Maxis Bhd\",\r\n        \"created_at\": \"2020-11-30 12:00:47\"\r\n    },\r\n    {\r\n        \"report_number\": \"KDN-PKK.600-16-186 JLD ( ) IG\",\r\n        \"cms_number\": \"CMS202561\",\r\n        \"number\": \"0139938670\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-12-02 16:17:35\"\r\n    },\r\n    {\r\n        \"report_number\": \"SEK 6/11107/20\",\r\n        \"cms_number\": \"CMS202592\",\r\n        \"number\": \"0104045573\",\r\n        \"telco\": \"Celcom Axiata Bhd\",\r\n        \"created_at\": \"2020-12-03 14:02:54\"\r\n    },\r\n    {\r\n        \"report_number\": \"KANGAR/008422/20\",\r\n        \"cms_number\": \"CMS202632\",\r\n        \"number\": \"0178478442\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-12-14 14:09:24\"\r\n    },\r\n    {\r\n        \"report_number\": \"KINARUT/2034/20\",\r\n        \"cms_number\": \"CMS202664\",\r\n        \"number\": \"01164680899\",\r\n        \"telco\": \"DiGi Telecommunications\",\r\n        \"created_at\": \"2020-12-14 17:35:",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "report_no",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "cms_no",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "phone_no",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "telco",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "date",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/search/mnp",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "[\r\n    {\r\n        \"phone\": \"60183898507\",\r\n        \"telco\": \"UMOBILE\",\r\n        \"region\": \"DUMMY\",\r\n        \"telco-info\": \"U Mobile Sdn Bhd\\nHead of Regulatory Strategy\\nLot 11.01, Level 11, East\\nBerjaya Times Square\\n1, Jalan Imbi\\n55100 Kuala Lumpur\\nE-mel:\\tfmd.lar@u.com.my\\n\",\r\n        \"telco-rn\": \"2080\",\r\n        \"source\": \"tga\"\r\n    }\r\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "MNP",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "mnp",
+                                        "value": "mnp",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "[\r\n    {\r\n        \"phone\": \"+60183898507\",\r\n        \"carrier\": \"U Mobile Sdn Bhd\",\r\n        \"type\": \"mobile\",\r\n        \"ported\": false,\r\n        \"telco-info\": \"U Mobile Sdn Bhd\\nHead of Regulatory Strategy\\nLot 11.01, Level 11, East\\nBerjaya Times Square\\n1, Jalan Imbi\\n55100 Kuala Lumpur\\nE-mel:\\tfmd.lar@u.com.my\\n\",\r\n        \"source\": \"neutrino\"\r\n    }\r\n]",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "No MNP",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "search",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "mnp",
+                                        "value": "nomnp",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
                             }
                         ],
                         "enabled": true,
