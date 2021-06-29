@@ -2876,7 +2876,7 @@
                     {
                         "uuid": "",
                         "documentation": "",
-                        "method": "get",
+                        "method": "post",
                         "endpoint": "api/category/count",
                         "responses": [
                             {
@@ -2911,7 +2911,7 @@
                     {
                         "uuid": "",
                         "documentation": "",
-                        "method": "get",
+                        "method": "post",
                         "endpoint": "api/category/url",
                         "responses": [
                             {
