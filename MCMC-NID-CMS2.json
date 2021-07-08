@@ -3297,7 +3297,7 @@
                     {
                         "uuid": "",
                         "documentation": "",
-                        "method": "get",
+                        "method": "post",
                         "endpoint": "api/search/mnp",
                         "responses": [
                             {
@@ -3323,7 +3323,7 @@
                                     },
                                     {
                                         "target": "query",
-                                        "modifier": "mnp",
+                                        "modifier": "type",
                                         "value": "mnp",
                                         "isRegex": false
                                     }
@@ -3354,7 +3354,7 @@
                                     },
                                     {
                                         "target": "query",
-                                        "modifier": "mnp",
+                                        "modifier": "type",
                                         "value": "nomnp",
                                         "isRegex": false
                                     }
