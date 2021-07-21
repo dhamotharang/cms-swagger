@@ -2977,6 +2977,88 @@
                         ],
                         "enabled": true,
                         "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "post",
+                        "endpoint": "api/category/newrequest",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"code\": \"1\",\r\n    \"msj\": \"Data Add http://www.ciklilyhitam.com\",\r\n    \"type\": \"Add blog successfull\",\r\n    \"url/account\": \"http://www.ciklilyhitam.com\",\r\n    \"creation time\": \"2021-07-21 10:35:57\"\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "send new request",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "type",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "account",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/category/snapshot/filter",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}{\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n        {\r\n            \"id\": 7,\r\n            \"account\": \"trading_currencies\",\r\n            \"updated\": \"2020-06-02 11:41:58\"\r\n        }\r\n    ],\r\n    \"first_page_url\": \"http://192.168.93.8:10080/api/category/snapshot/filter?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 1,\r\n    \"last_page_url\": \"http://192.168.93.8:10080/api/category/snapshot/filter?page=1\",\r\n    \"links\": [\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"&laquo; Previous\",\r\n            \"active\": false\r\n        },\r\n        {\r\n            \"url\": \"http://192.168.93.8:10080/api/category/snapshot/filter?page=1\",\r\n            \"label\": 1,\r\n            \"active\": true\r\n        },\r\n        {\r\n            \"url\": null,\r\n            \"label\": \"Next &raquo;\",\r\n            \"active\": false\r\n        }\r\n    ],\r\n    \"next_page_url\": null,\r\n    \"path\": \"http://192.168.93.8:10080/api/category/snapshot/filter\",\r\n    \"per_page\": 10,\r\n    \"prev_page_url\": null,\r\n    \"to\": 1,\r\n    \"total\": 1\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "query",
+                                        "modifier": "type",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    },
+                                    {
+                                        "target": "query",
+                                        "modifier": "url_account",
+                                        "value": "(.*)",
+                                        "isRegex": true
+                                    }
+                                ],
+                                "rulesOperator": "AND",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false
                     }
                 ],
                 "proxyMode": false,
